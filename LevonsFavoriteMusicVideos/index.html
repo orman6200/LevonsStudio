@@ -3645,7 +3645,7 @@
                return `<div>${escapeHtml(text)}</div>`;
             }
          } 
-         else {   // The code in the "else" part is run if GitHub REST API with Cloudflare Worker is detected.
+         // else {   // The code in the "else" part is run if GitHub REST API with Cloudflare Worker is detected.
 
             // ****************************************************************************************************
             // Create the Free Cloudflare Worker (Server Proxy)
@@ -3987,7 +3987,7 @@
             //    1. No Token Exposure:  The token only lives inside Cloudflare's server environment. Even if someone inspects the HTTP network requests inDevTools, they will only see a POST request to your worker URL with {"name": "...", "text": "..."}.
             //    2. GitHub Friendly:    GitHub secret scanners will never detect or revoke your token because it stays off Git repositories completely.
             //    3. Generous Free Tier: Cloudflare Workers gives you 100,000 free requests per day, which is more than enough for a personal site orcomment system.
-         }
+         // }
       });
       // ****************************************************************************************************
       // ****************************************************************************************************
