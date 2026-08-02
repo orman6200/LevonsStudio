@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Levon's Studio</title>
+   <style>
+      body {
+         background-color:           #007AFF;
+         color:                      #ffffff;
+         padding:                    0px;
+         font-family:                Arial, Verdana, Helvetica, sans-serif;
+      }
+      header {
+      }
+      main {
+         color:                      #ffffff;
+         padding:                    0px;
+         font-family:                Arial, Verdana, Helvetica, sans-serif;
+         display:                    flex;
+         flex-direction:             column;
+         justify-content:            center;
+         align-items:                center;
+      }
+      footer {
+      }
+      /* **************************************************************************************************** */
+      .Section-A {
+         width:                      1008px;
+         height:                     156px;
+         background-color:           #007AFF;
+         border-top:                 6px solid #FF00F0;
+         border-bottom:              6px solid #FF00F0;
+         border-left:                6px solid #FF00F0;
+         border-right:               6px solid #FF00F0;
+         border-top-left-radius:     8px;
+         border-top-right-radius:    8px;
+         border-bottom-left-radius:  8px;
+         border-bottom-right-radius: 8px;
+         margin-top:                 12px;
+         margin-bottom:              12px;
+         margin-left:                12px;
+         margin-right:               12px;
+         display:                    flex;
+         flex-direction:             column;
+         align-items:                flex-start;
+         vertical-align:             top;
+      }
+      .Section-B {
+         width:                      1008px;
+         height:                     318px;
+         background-color:           #007AFF;
+         border-top:                 6px solid #FF00F0;
+         border-bottom:              6px solid #FF00F0;
+         border-left:                6px solid #FF00F0;
+         border-right:               6px solid #FF00F0;
+         border-top-left-radius:     8px;
+         border-top-right-radius:    8px;
+         border-bottom-left-radius:  8px;
+         border-bottom-right-radius: 8px;
+         margin-top:                 12px;
+         margin-bottom:              12px;
+         margin-left:                12px;
+         margin-right:               12px;
+         display:                    flex;
+         flex-direction:             column;
+         align-items:                flex-start;
+         vertical-align:             top;
+      }
+      .Section-Z {
+         width:                      1008px;
+         height:                     auto;
+         background-color:           #007AFF;
+         border-top:                 6px solid #FF00F0;
+         border-bottom:              6px solid #FF00F0;
+         border-left:                6px solid #FF00F0;
+         border-right:               6px solid #FF00F0;
+         border-top-left-radius:     8px;
+         border-top-right-radius:    8px;
+         border-bottom-left-radius:  8px;
+         border-bottom-right-radius: 8px;
+         margin-top:                 12px;
+         margin-bottom:              12px;
+         margin-left:                12px;
+         margin-right:               12px;
+         display:                    flex;
+         flex-direction:             column;
+         align-items:                flex-start;
+         vertical-align:             top;
+      }
+      /* **************************************************************************************************** */
+      .Section-A1 {
+         width:                      992px;
+         height:                     140px;
+         background:                 #007AFF;
+         border-top:                 2px solid #FF00F0;
+         border-bottom:              2px solid #FF00F0;
+         border-left:                2px solid #FF00F0;
+         border-right:               2px solid #FF00F0;
+         border-top-left-radius:     8px;
+         border-top-right-radius:    8px;
+         border-bottom-left-radius:  8px;
+         border-bottom-right-radius: 8px;
+         margin-top:                 6px;
+         margin-bottom:              6px;
+         margin-left:                6px;
+         margin-right:               6px;
+         display:                    flex;
+         flex-direction:             column;
+         align-items:                flex-start;
+         vertical-align:             top;
+      }
+      .Section-B1 {
+         width:                      992px;
+         height:                     302px;
+         background:                 #007AFF;
+         border-top:                 2px solid #FF00F0;
+         border-bottom:              2px solid #FF00F0;
+         border-left:                2px solid #FF00F0;
+         border-right:               2px solid #FF00F0;
+         border-top-left-radius:     8px;
+         border-top-right-radius:    8px;
+         border-bottom-left-radius:  8px;
+         border-bottom-right-radius: 8px;
+         margin-top:                 6px;
+         margin-bottom:              6px;
+         margin-left:                6px;
+         margin-right:               6px;
+         display:                    flex;
+         flex-direction:             column;
+         align-items:                flex-start;
+         vertical-align:             top;
+      }
+      .Section-Z1 {
+         width:                      992px;
+         height:                     auto;
+         background:                 #007AFF;
+         border-top:                 2px solid #FF00F0;
+         border-bottom:              2px solid #FF00F0;
+         border-left:                2px solid #FF00F0;
+         border-right:               2px solid #FF00F0;
+         border-top-left-radius:     8px;
+         border-top-right-radius:    8px;
+         border-bottom-left-radius:  8px;
+         border-bottom-right-radius: 8px;
+         margin-top:                 6px;
+         margin-bottom:              6px;
+         margin-left:                6px;
+         margin-right:               6px;
+         display:                    flex;
+         flex-direction:             column;
+         align-items:                flex-start;
+         vertical-align:             top;
+      }
+      /* **************************************************************************************************** */
+      .Section-A1a {
+         width:                      976px;
+         height:                     124px;
+         background:                 #007AFF;
+         border-top:                 2px solid #007AFF;
+         border-bottom:              2px solid #007AFF;
+         border-left:                2px solid #007AFF;
+         border-right:               2px solid #007AFF;
+         border-top-left-radius:     8px;
+         border-top-right-radius:    8px;
+         border-bottom-left-radius:  8px;
+         border-bottom-right-radius: 8px;
+         margin-top:                 6px;
+         margin-bottom:              6px;
+         margin-left:                6px;
+         margin-right:               6px;
+         display:                    flex;
+         flex-direction:             column;
+         align-items:                flex-start;
+         vertical-align:             top;
+      }
+      .Section-B1a {
+         width:                      976px;
+         height:                     286px;
+         background:                 #007AFF;
+         border-top:                 2px solid #007AFF;
+         border-bottom:              2px solid #007AFF;
+         border-left:                2px solid #007AFF;
+         border-right:               2px solid #007AFF;
+         border-top-left-radius:     8px;
+         border-top-right-radius:    8px;
+         border-bottom-left-radius:  8px;
+         border-bottom-right-radius: 8px;
+         margin-top:                 6px;
+         margin-bottom:              6px;
+         margin-left:                6px;
+         margin-right:               6px;
+         display:                    flex;
+         flex-direction:             column;
+         align-items:                flex-start;
+         vertical-align:             top;
+      }
+      .Section-Z1a {
+         width:                      976px;
+         height:                     auto;
+         background:                 #007AFF;
+         border-top:                 2px solid #007AFF;
+         border-bottom:              2px solid #007AFF;
+         border-left:                2px solid #007AFF;
+         border-right:               2px solid #007AFF;
+         border-top-left-radius:     8px;
+         border-top-right-radius:    8px;
+         border-bottom-left-radius:  8px;
+         border-bottom-right-radius: 8px;
+         margin-top:                 6px;
+         margin-bottom:              6px;
+         margin-left:                6px;
+         margin-right:               6px;
+         display:                    flex;
+         flex-direction:             column;
+         align-items:                flex-start;
+         vertical-align:             top;
+      }
+      /* **************************************************************************************************** */
+      .Section-A1a1 {
+         width:                      960px;
+         height:                     108px;
+         background:                 #007AFF;
+         border-top:                 2px solid #FF00F0;
+         border-bottom:              2px solid #FF00F0;
+         border-left:                2px solid #FF00F0;
+         border-right:               2px solid #FF00F0;
+         border-top-left-radius:     8px;
+         border-top-right-radius:    8px;
+         border-bottom-left-radius:  8px;
+         border-bottom-right-radius: 8px;
+         margin-top:                 6px;
+         margin-bottom:              6px;
+         margin-left:                6px;
+         margin-right:               6px;
+         display:                    flex;
+         flex-direction:             column;
+         align-items:                center;
+         vertical-align:             top;
+      }
+      .Section-B1a1 {
+         width:                      960px;
+         height:                     270px;
+         background:                 #007AFF;
+         border-top:                 2px solid #FF00F0;
+         border-bottom:              2px solid #FF00F0;
+         border-left:                2px solid #FF00F0;
+         border-right:               2px solid #FF00F0;
+         border-top-left-radius:     8px;
+         border-top-right-radius:    8px;
+         border-bottom-left-radius:  8px;
+         border-bottom-right-radius: 8px;
+         margin-top:                 6px;
+         margin-bottom:              6px;
+         margin-left:                6px;
+         margin-right:               6px;
+         display:                    flex;
+         flex-direction:             column;
+         align-items:                center;
+         vertical-align:             top;
+      }
+      .Section-Z1a1 {
+         width:                      960px;
+         height:                     auto;
+         background:                 #007AFF;
+         border-top:                 2px solid #FF00F0;
+         border-bottom:              2px solid #FF00F0;
+         border-left:                2px solid #FF00F0;
+         border-right:               2px solid #FF00F0;
+         border-top-left-radius:     8px;
+         border-top-right-radius:    8px;
+         border-bottom-left-radius:  8px;
+         border-bottom-right-radius: 8px;
+         margin-top:                 6px;
+         margin-bottom:              6px;
+         margin-left:                6px;
+         margin-right:               6px;
+      }
+      /* **************************************************************************************************** */
+      .Section-A1a1 button {
+         background-color:           #007AFF;
+         border-top:                 2px solid #007AFF;
+         border-bottom:              2px solid #007AFF;
+         border-left:                2px solid #007AFF;
+         border-right:               2px solid #007AFF;
+         border-top-left-radius:     8px;
+         border-top-right-radius:    8px;
+         border-bottom-left-radius:  8px;
+         border-bottom-right-radius: 8px;
+         margin-top:                 6px;
+         margin-bottom:              6px;
+         margin-left:                6px;
+         margin-right:               6px;
+         color:                      #ffffff;
+         text-align:                 left;
+         font-size:                  24px;
+         white-space:                pre-wrap;
+         cursor:                     pointer;
+         pointer-events:             none;
+         display:                    inline-block;
+         vertical-align:             top;
+      }
+      .Section-A1a1 button:hover {
+         background-color:           #FF00F0;
+      }
+      #TitleButton1 {
+         font-size:                  36px;
+      }
+      #TitleButton2 {
+      }
+      /* **************************************************************************************************** */
+      .Section-B1a1 button {
+         background-color:           #007AFF;
+         border-top:                 2px solid #FF00F0;
+         border-bottom:              2px solid #FF00F0;
+         border-left:                2px solid #FF00F0;
+         border-right:               2px solid #FF00F0;
+         border-top-left-radius:     8px;
+         border-top-right-radius:    8px;
+         border-bottom-left-radius:  8px;
+         border-bottom-right-radius: 8px;
+         margin-top:                 6px;
+         margin-bottom:              6px;
+         margin-left:                6px;
+         margin-right:               6px;
+         color:                      #ffffff;
+         text-align:                 left;
+         font-size:                  24px;
+         white-space:                pre-wrap;
+         cursor:                     pointer;
+         pointer-events:             auto;
+         display:                    inline-block;
+         vertical-align:             top;
+      }
+      .Section-B1a1 button:hover {
+         background-color:           #FF00F0;
+      }
+      /* **************************************************************************************************** */
+      .Section-Z1a1 button {
+         background-color:           #007AFF;
+         border-top:                 2px solid #007AFF;
+         border-bottom:              2px solid #007AFF;
+         border-left:                2px solid #007AFF;
+         border-right:               2px solid #007AFF;
+         border-top-left-radius:     8px;
+         border-top-right-radius:    8px;
+         border-bottom-left-radius:  8px;
+         border-bottom-right-radius: 8px;
+         margin-top:                 6px;
+         margin-bottom:              6px;
+         margin-left:                6px;
+         margin-right:               6px;
+         color:                      #ffffff;
+         text-align:                 left;
+         font-size:                  24px;
+         white-space:                pre-wrap;
+         width:                      auto;
+      }
+      .Section-Z1a1 button:hover {
+         background-color:           #FF00F0;
+      }
+      #ReleaseNotesTitle {
+         display:                    flex;
+         flex-direction:             row;
+         align-items:                center;
+         justify-content:            center;
+      }
+      #PageFooterButtonZ1a1a {
+         border-top:                 2px solid #FF00F0;
+         border-bottom:              2px solid #FF00F0;
+         border-left:                2px solid #FF00F0;
+         border-right:               2px solid #FF00F0;
+         border-top-left-radius:     8px;
+         border-top-right-radius:    8px;
+         border-bottom-left-radius:  8px;
+         border-bottom-right-radius: 8px;
+         font-weight:                bold;
+         cursor:                     pointer;
+         pointer-events:             auto;
+      }
+      #ArrowIconZ1a1a {
+         width:                      auto;
+         height:                     auto;
+         display:                    flex;
+         flex-direction:             row;
+         align-items:                center;
+         vertical-align:             middle;
+      }
+      #ReleaseNotesContent {
+         cursor:                     pointer;
+         pointer-events:             none;
+         max-height:                 0; 
+         overflow:                   hidden; 
+         transition:                 max-height 1.00s ease;
+         display:                    flex;
+         flex-direction:             column;
+         align-items:                center;
+         vertical-align:             top;
+      }
+      #PageFooterButtonZ1a1b, #PageFooterButtonZ1a6c {
+         margin-bottom:              0px;
+      }
+      #PageFooterButtonZ1a1d {
+         margin-bottom:              6px;
+      }
+      /* **************************************************************************************************** */
+   </style>
+</head>
+
+<body>
+   <header>
+   </header>
+
+   <main>
+      <div class="Section-A" id="Section-A">
+         <div class="Section-A1">
+            <div class="Section-A1a">
+               <div class="Section-A1a1">
+                  <button id="TitleButton1">Levon's Studio</button>
+                  <button id="TitleButton2">Experimental . Innovative . Unique . Funful . Useful</button>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="Section-B" id="Section-B">
+         <div class="Section-B1">
+            <div class="Section-B1a">
+               <div class="Section-B1a1">
+                  <button id="LinkButton1" onclick="window.open('https://www.Levon-Studio.com/LevonsFavoriteMusicVideos/index.html', '_blank')">Levon's Favorite Music Videos</button>
+                  <button id="LinkButton2">TBD</button>
+                  <button id="LinkButton3">TBD</button>
+                  <button id="LinkButton4">TBD</button>
+                  <button id="LinkButton5">TBD</button>
+                  <button id="LinkButton6">TBD</button>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="Section-Z" id="Section-Z">
+         <div class="Section-Z1">
+            <div class="Section-Z1a">
+               <div class="Section-Z1a1">
+                  <div id="ReleaseNotesTitle">
+                     <button id="PageFooterButtonZ1a1a">Release Notes</button>
+                     <img id="ArrowIconZ1a1a" src="" alt="ArrowIcon">
+                  </div>
+
+                  <div id="ReleaseNotesContent">
+                     <button id="PageFooterButtonZ1a6b">Web Application Release Version:  v1.0A</button>
+                     <button id="PageFooterButtonZ1a6c">© Copywrite  2026  Levon's Studio.</button>
+                     <button id="PageFooterButtonZ1a6d">All rights reserved.</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </main>
+
+   <footer>
+   </footer>
+
+   <script>
+      // Disable right-click context menu on page load.
+      document.addEventListener('contextmenu', function(e) {
+         e.preventDefault();
+      });
+
+      // Expand the Release Notes section on page load.
+      document.addEventListener("DOMContentLoaded", () => {
+         ExpandReleaseNotes();
+      });
+
+      const Icon_Small_Collapsed_3_PNG              = "Icon-Small-Collapsed-03.png";
+      const Icon_Small_Expanded_3_PNG               = "Icon-Small-Expanded-03.png";
+      document.getElementById("ArrowIconZ1a1a").src = Icon_Small_Collapsed_3_PNG;
+
+      const PageFooterButtonZ1a1a = document.getElementById('PageFooterButtonZ1a1a');
+      const ReleaseNotesContent   = document.getElementById('ReleaseNotesContent');
+      PageFooterButtonZ1a1a.addEventListener('click', () => {
+         const isOpen = ReleaseNotesContent.style.maxHeight && ReleaseNotesContent.style.maxHeight !== '0px';
+         if (isOpen) {
+            ReleaseNotesContent.style.maxHeight = '0';
+            PageFooterButtonZ1a1a.appendChild(document.getElementById("ArrowIconZ1a1a").src = Icon_Small_Collapsed_3_PNG);
+         } else {
+            ReleaseNotesContent.style.maxHeight = ReleaseNotesContent.scrollHeight + 'px';
+            PageFooterButtonZ1a1a.appendChild(document.getElementById("ArrowIconZ1a1a").src = Icon_Small_Expanded_3_PNG);
+         }
+      });
+
+      function CollapseAllNotes() {
+         const ReleaseNotesContent   = document.getElementById('ReleaseNotesContent');
+         const ArrowIconZ1a6a        = document.getElementById('ArrowIconZ1a6a');
+         const setCollapsedIcon = (arrowIcon) => {
+            if (!arrowIcon) return;
+            arrowIcon.src = Icon_Small_Collapsed_3_PNG;
+         };
+         if (ReleaseNotesContent) {
+            ReleaseNotesContent.style.maxHeight = '0';
+            setCollapsedIcon(ArrowIconZ1a6a);
+         }
+         ExpandReleaseNotes();
+      }
+
+      function ExpandReleaseNotes() {
+         const ReleaseNotesContent   = document.getElementById('ReleaseNotesContent');
+         const ArrowIconZ1a1a        = document.getElementById('ArrowIconZ1a1a');
+         const setCollapsedIcon = (arrowIcon) => {
+            if (!arrowIcon) return;
+            arrowIcon.src = Icon_Small_Expanded_3_PNG;
+         };
+         if (ReleaseNotesContent) {
+            ReleaseNotesContent.style.maxHeight = ReleaseNotesContent.scrollHeight + 'px';
+            setCollapsedIcon(ArrowIconZ1a1a);
+         }
+      }
+   </script>
+</body>
+</html>

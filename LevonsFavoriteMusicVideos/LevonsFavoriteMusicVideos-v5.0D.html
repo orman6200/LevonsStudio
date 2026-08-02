@@ -1313,7 +1313,7 @@
          height:                     var(--HeightTimeSliderBarWebkitSliderThumb);
          background:                 var(--ThemeColor-2);
          border-radius:              var(--BorderRadiusTimeSliderBar);
-         margin-top:                -6px;
+         margin-top:                -7px;
       }
       #TimeSliderTotalTime {
          border-top:                 var(--Section-X0x0-Button-Border-Top)    solid var(--ThemeColor-2);
@@ -1533,7 +1533,7 @@
          height:                     var(--HeightVolumeSliderBarWebkitSliderThumb);
          background:                 var(--ThemeColor-2);
          border-radius:              var(--BorderRadiusVolumeSliderBar);
-         margin-top:                -6px;
+         margin-top:                -7px;
       }
       #VolumeSliderMaxVolume {
          border-top:                 var(--Section-X0x0-Button-Border-Top)    solid var(--ThemeColor-2);
@@ -2424,7 +2424,7 @@
          border-bottom:              2px dashed;
          margin-bottom:              6px;
          padding:                    6px;
-         opacity:                    0.75;
+         opacity:                    1.00;
          white-space:                pre-wrap;
          overflow-wrap:              break-word;
          word-wrap:                  break-word;
@@ -2501,7 +2501,7 @@
          font-size:                  var(--FontSize);
          font-family:                var(--FontFamily);
          white-space:                pre-wrap;
-         opacity:                    0.75;
+         opacity:                    1.00;
       }
       #CommentSectionInputTextTitle {
          background-color:           var(--ThemeColor-2);
@@ -2545,7 +2545,7 @@
          font-size:                  var(--FontSize);
          font-family:                var(--FontFamily);
          white-space:                pre-wrap;
-         opacity:                    0.75;
+         opacity:                    1.00;
       }
       #CommentSectionSubmitButton {
       }
@@ -3278,23 +3278,24 @@
                   </div>
 
                   <div class="Section-F1a2">
-                     <!-- <button id="CommentSectionTitle">Posted Comments:</button>
+                     <button id="CommentSectionTitle" type="button">Posted Comments:</button>
                      <div class="Section-F1a2-Container">
                         <div class="Section-F1a2-Container1">
                            <div id="CommentSectionPostedText"></div>
                         </div>
                         <div class="Section-F1a2-Container2">
                            <form id="CommentSectionForm">
-                              <button   id="CommentSectionInputNameTitle">Name:</button>
+                              <button   id="CommentSectionInputNameTitle" type="button">Name:</button>
                               <textarea id="CommentSectionInputName" placeholder="Enter your name (required)..."></textarea>
-                              <button   id="CommentSectionInputTextTitle">Comment:</button>
+                              <button   id="CommentSectionInputTextTitle" type="button">Comment:</button>
                               <textarea id="CommentSectionInputText" placeholder="Enter your comment (required)..."></textarea>
                               <button   id="CommentSectionSubmitButton" type="submit">Submit</button>
-                              <button   id="CommentSectionSubmitMessage">Message:  </button>
+                              <button   id="CommentSectionSubmitMessage" type="button">Message: </button>
                            </form>
                         </div>
-                     </div> -->
+                     </div>
                   </div>
+
                </div>
             </div>
          </div>
@@ -3427,11 +3428,13 @@
          const ZoomLevelButtonIdDefault = getComputedStyle(document.documentElement).getPropertyValue('--ZoomLevelButtonIdDefault').replace(/["']/g, '').trim();   // Remove double Quotes.
          ClickedZoomLevelButton(ZoomLevelButtonIdDefault);
 
-         const TextColorButton1                     = document.getElementById('TextColorButton1');
+         const TextColorButton1         = document.getElementById('TextColorButton1');
          ClickedTextColorButton('TextColorButton1');
 
-         const ElementColorButton3                  = document.getElementById('ElementColorButton3');
+         const ElementColorButton3      = document.getElementById('ElementColorButton3');
          ClickedElementColorButton('ElementColorButton3');
+
+         ExpandReleaseNotes();
       });
 
       const Logo_Background_MusicalNotes_1_PNG      = "url('Logo-Background-MusicalNotes-01.png')";
@@ -3466,94 +3469,526 @@
 
       const Buttons_PlayListVideoList_v_CSV         = "Buttons-PlayListVideoList-v5.0D.csv";
       // ****************************************************************************************************
-      // The below code is designed to use Classic ASP to save the Name and Comments entered by the user into a .csv file on the webserver.
-      // The .csv file is then read and displayed in the Posted Comments section of the web page.
-      // This code is designed to work with the Comment-Save.asp file, which handles the server-side processing of saving the comments.
-      // It works perfectly on Microsoft IIS webserver with Classic ASP enabled. It will not work on other webservers or hosting platforms that do not support Classic ASP.
       // ****************************************************************************************************
-      // const Comments_CSV                            = "Comments.csv";
-      // const Comment_Save_ASP                        = "Comment-Save.asp";
+      // ****************************************************************************************************
+      // A. The "if" section:
+      //    The code is designed to use Classic ASP to save the Name and Comments entered by the user into a .csv file on the webserver.
+      //    The .csv file is then read and displayed in the Posted Comments section of my web app.
+      //    This code is designed to work with the Comment-Save.asp file, which handles the server-side processing of saving the comments.
+      //    It works perfectly on Microsoft IIS webserver with Classic ASP enabled on the local computer for private access to my web app.
+      //    It does not work on other webservers, Githumb code repository, or other web hosting platforms that do not support Classic ASP.
+      // B. The "else" section:
+      //    The code is designed to use "GitHub REST API" to save the Name and Comments entered by the user into a .csv file on the Github code repository.
+      //    The .csv file is then read and displayed in the Posted Comments section of my web app.
+      //    This code is designed to work with a Cloudflare Worker.js (stored on Cloudflare).
+      //    It handles securing the Github code repository settings and Github read/write Token securely (encripted) and isolated from the web app.
+      //    It works perfectly on Github for public access to my web app. 
+      // ****************************************************************************************************
+      function isLocalClassicASPHost() {
+         const host = window.location.hostname.toLowerCase();
+         return host === "localhost" || host === "127.0.0.1" || host === "::1";
+      }
 
-      // document.addEventListener('DOMContentLoaded', () => {
-      //    const CommentSectionForm                         = document.getElementById('CommentSectionForm');
-      //    if (CommentSectionForm) CommentSectionForm.addEventListener('submit', saveComment);
-      //    loadComments();
-      // });
+      document.addEventListener('DOMContentLoaded', () => {
+         if (isLocalClassicASPHost()) {   // The code in the "if" part is run if local IIS with Classic ASP is detected.
+            const Comments_CSV = "Comments.csv";
+            const Comment_Save_ASP = "Comment-Save.asp";
 
-      // function saveComment(event) {
-      //    event.preventDefault();
-      //    const CommentSectionForm                         = document.getElementById('CommentSectionForm');
-      //    const CommentSectionInputName                    = document.getElementById('CommentSectionInputName');
-      //    const CommentSectionInputText                    = document.getElementById('CommentSectionInputText');
-      //    const CommentSectionSubmitButton                 = document.getElementById('CommentSectionSubmitButton');
-      //    const CommentSectionSubmitMessage                = document.getElementById('CommentSectionSubmitMessage');
-      //    if (!CommentSectionForm || !CommentSectionInputName || !CommentSectionInputText || !CommentSectionSubmitMessage) return;
-      //    const CommentInputName                           = CommentSectionInputName.value.trim();
-      //    const CommentInputText                           = CommentSectionInputText.value.trim();
-      //    if (!CommentInputName || !CommentInputText) {
-      //          CommentSectionSubmitMessage.textContent       = 'Message:  Enter both your Name and your Comments before clicking Submit.';
-      //          return;
-      //    }
-      //    const CombinedComment                            = `${CommentInputName}:  ${CommentInputText}`;
-      //    CommentSectionSubmitMessage.textContent          = 'Message:  Saving Name and Comments...';
-      //    const body = new URLSearchParams();
-      //    body.append('comment', CombinedComment.replace(/\r?\n/g, ' '));
-      //    fetch(Comment_Save_ASP, {
-      //       method:  'POST',
-      //       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      //       cache:   'no-store',
-      //       body:    body.toString()
-      //    })
-      //    .then(response => response.json())
-      //    .then(result => {
-      //       if (result.success) {
-      //          CommentSectionInputName.value              = '';
-      //          CommentSectionInputText.value              = '';
-      //          return loadComments().then(() => {
-      //             CommentSectionSubmitMessage.textContent = 'Message:  Name and Comments saved.';
-      //          });
-      //       } else {
-      //          CommentSectionSubmitMessage.textContent    = result.error || 'Message:  Name and Comments NOT saveed.';
-      //       }
-      //    })
-      //    .catch((err) => {
-      //       console.error(err);
-      //       CommentSectionSubmitMessage.textContent       = 'Message:  Name and Comments NOT saved. Ensure IIS Classic ASP is enabled and Comment-Save.asp is accessible.';
-      //    });
-      // }
+            const CommentSectionForm = document.getElementById('CommentSectionForm');
+            if (CommentSectionForm) {
+               CommentSectionForm.addEventListener('submit', saveComment);
+            }
+            loadComments();
 
-      // function loadComments() {
-      //    const CommentSectionPostedText                   = document.getElementById('CommentSectionPostedText');
-      //    if (!CommentSectionPostedText) return Promise.resolve();
-      //    return fetch(getCommentsFetchUrl(), { cache: 'no-store' })
-      //    .then(response => {
-      //       if (!response.ok) throw new Error('Message:  Comments file not found.');
-      //       return response.text();
-      //    })
-      //    .then(text => {
-      //       const rows = text.trim().split(/\r?\n/).filter(line => line.trim());
-      //       if (!rows.length) {
-      //          CommentSectionPostedText.innerHTML         = '<div style="padding: 6px; border-bottom:2px dashed; opacity:0.75;">Message:  Comments not entered yet.</div>';
-      //          return;
-      //       }
-      //       CommentSectionPostedText.innerHTML            = rows.map(formatCommentLine).join('');
-      //    })
-      //    .catch(() => {
-      //       CommentSectionPostedText.innerHTML            = '<div style="padding: 6px; border-bottom:2px dashed; opacity:0.75;">Message:  Comments not entered yet.</div>';
-      //    });
-      // }
+            function getCommentTimestamp() {
+               const now = new Date();
+               const yyyy = now.getFullYear();
+               const mm = String(now.getMonth() + 1).padStart(2, '0');
+               const dd = String(now.getDate()).padStart(2, '0');
+               const hh = String(now.getHours()).padStart(2, '0');
+               const mi = String(now.getMinutes()).padStart(2, '0');
+               const ss = String(now.getSeconds()).padStart(2, '0');
+               return `${yyyy}-${mm}-${dd}  ${hh}:${mi}:${ss}`;
+            }
 
-      // function getCommentsFetchUrl() {
-      //    return `${Comments_CSV}?_=${Date.now()}`;
-      // }
+            function escapeHtml(value) {
+               return String(value ?? '')
+                  .replace(/&/g, '&amp;')
+                  .replace(/</g, '&lt;')
+                  .replace(/>/g, '&gt;')
+                  .replace(/"/g, '&quot;')
+                  .replace(/'/g, '&#39;');
+            }
 
-      // function formatCommentLine(line) {
-      //    if (!line || !line.trim()) return '';
-      //    const  trimmed                                   = line.trim();
-      //    const  match                                     = trimmed.match(/^"(.*)"$/);
-      //    const  text                                      = match ? match[1].replace(/""/g, '"') : trimmed;
-      //    return `<div>${text.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>`;
-      // }
+            function parseCsvLine(line) {
+               const fields = [];
+               let current = '';
+               let inQuotes = false;
+
+               for (let i = 0; i < line.length; i++) {
+                  const ch = line[i];
+                  if (ch === '"') {
+                     if (inQuotes && line[i + 1] === '"') {
+                        current += '"';
+                        i++;
+                     } else {
+                        inQuotes = !inQuotes;
+                     }
+                  } else if (ch === ',' && !inQuotes) {
+                     fields.push(current);
+                     current = '';
+                  } else {
+                     current += ch;
+                  }
+               }
+               fields.push(current);
+               return fields;
+            }
+
+            function saveComment(event) {
+               event.preventDefault();
+
+               const CommentSectionInputName = document.getElementById('CommentSectionInputName');
+               const CommentSectionInputText = document.getElementById('CommentSectionInputText');
+               const CommentSectionSubmitMessage = document.getElementById('CommentSectionSubmitMessage');
+
+               if (!CommentSectionInputName || !CommentSectionInputText || !CommentSectionSubmitMessage) return;
+
+               const CommentInputName = CommentSectionInputName.value.trim();
+               const CommentInputText = CommentSectionInputText.value.trim();
+
+               if (!CommentInputName || !CommentInputText) {
+                  CommentSectionSubmitMessage.textContent = 'Message:  Enter both your Name and your Comments before clicking Submit.';
+                  return;
+               }
+
+               const timestamp = getCommentTimestamp();
+               CommentSectionSubmitMessage.textContent = 'Message:  Saving Name and Comments...';
+
+               const body = new URLSearchParams();
+               body.append('comment', `${CommentInputName}:  ${CommentInputText}`.replace(/\r?\n/g, ' '));
+               body.append('name', CommentInputName);
+               body.append('text', CommentInputText);
+               body.append('timestamp', timestamp);
+
+               fetch(Comment_Save_ASP, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                  cache: 'no-store',
+                  body: body.toString()
+               })
+               .then(response => response.json())
+               .then(result => {
+                  if (result.success) {
+                     CommentSectionInputName.value = '';
+                     CommentSectionInputText.value = '';
+                     return loadComments().then(() => {
+                        CommentSectionSubmitMessage.textContent = 'Message:  Name and Comments saved.';
+                     });
+                  } else {
+                     CommentSectionSubmitMessage.textContent = result.error || 'Message:  Name and Comments NOT saved.';
+                  }
+               })
+               .catch((err) => {
+                  console.error(err);
+                  CommentSectionSubmitMessage.textContent = 'Message:  Name and Comments NOT saved. Ensure IIS with Classic ASP is enabled and Comment-Save.asp is accessible.';
+               });
+            }
+
+            function loadComments() {
+               const CommentSectionPostedText = document.getElementById('CommentSectionPostedText');
+               if (!CommentSectionPostedText) return Promise.resolve();
+
+               return fetch(`${Comments_CSV}?_=${Date.now()}`, { cache: 'no-store' })
+               .then(response => {
+                  if (!response.ok) throw new Error('Message:  Comments.csv file not found.');
+                  return response.text();
+               })
+               .then(text => {
+                  const rows = text.trim().split(/\r?\n/).filter(line => line.trim());
+                  if (!rows.length) {
+                     CommentSectionPostedText.innerHTML = '<div style="padding: 6px; border-bottom: 2px dashed; opacity:0.75;">Message:  Comments not entered yet.</div>';
+                     return;
+                  }
+                  CommentSectionPostedText.innerHTML = rows.map(formatCommentLine).join('');
+               })
+               .catch(() => {
+                  CommentSectionPostedText.innerHTML = '<div style="padding: 6px; border-bottom: 2px dashed; opacity:0.75;">Message:  Comments not entered yet.</div>';
+               });
+            }
+
+            function formatCommentLine(line) {
+               if (!line || !line.trim()) return '';
+
+               const trimmed = line.trim();
+               const fields = parseCsvLine(trimmed);
+
+               if (fields.length >= 3) {
+                  // Clean off leading/trailing double-quotes and whitespace from each field
+                  const cleanField = (f) => f.trim().replace(/^"|"$/g, '').replace(/""/g, '"');
+
+                  const name      = cleanField(fields[0]);
+                  const comment   = cleanField(fields[1]);
+                  const timestamp = cleanField(fields[2]);
+
+                  // The <br> tag (after </strong> tag) causes a line break. I can remove it if I want the user entered values to be in the same line as the label like "Name:".
+                  return `<div style="padding: 6px; border-bottom: 2px dashed; opacity:1.00;">` +
+                         `<div><strong>Name:  </strong>${escapeHtml(name || 'Unknown')}</div>` +
+                         `<div><strong>Comment:  </strong>${escapeHtml(comment || '')}</div>` +
+                         `<div><strong>Date/Time:  </strong>${escapeHtml(timestamp || '')}</div>` +
+                         `</div>`;
+               }
+
+               const match = trimmed.match(/^"(.*)"$/);
+               const text = match ? match[1].replace(/""/g, '"') : trimmed;
+
+               return `<div>${escapeHtml(text)}</div>`;
+            }
+         } 
+         else {   // The code in the "else" part is run if GitHub REST API with Cloudflare Worker is detected.
+
+            // ****************************************************************************************************
+            // Create the Free Cloudflare Worker (Server Proxy)
+            //    1. Go to Cloudflare.com and create a free account.
+            //    2. In the dashboard, navigate to Workers & Pages > Create Application > Create Worker.
+            //    3. Name it (e.g., Comment-Proxy.js) and click Deploy.
+            //    4. Click Edit Code and paste the Worker script.
+            //    5. Name the Cloudflare Worker Script Comment-Proxy.js)
+            //    6. Click Save and Deploy.
+            //    7. Go back to your Worker's main page, click Settings > Variables and Secrets, and add the following Environment Variables:
+            //       GITHUB_TOKEN:     ???
+            //          (click "Encrypt" so it stays secret! and do not use quotes or double quotes)
+            //       GITHUB_OWNER:     "orman6200"
+            //       GITHUB_REPO:      "LevonsFavoriteMusicVideos"
+            //       GITHUB_FILE_PATH: "LevonsFavoriteMusicVideos/Comments.csv"
+            //       GITHUB_BRANCH:    "main"
+            //    8. Copy your Worker's public URL (it will look like [https://comment-proxy.yourname.workers.dev](https://comment-proxy.yourname.workers.dev)).
+            // ****************************************************************************************************
+
+            // A. Set Up Your Cloudflare Worker:
+            //    Follow these steps to deploy the Worker script that will write to your repository:
+            //    1. Log into your Cloudflare Dashboard.
+            //    2. In the left sidebar, navigate to Workers & Pages >>> Overview.
+            //    3. Click Create Application >>> Create Worker.
+            //    4. Name your Worker (e.g., github-comment-proxy) and click Deploy.
+            //    5. On the success screen, click Edit Code.
+            //    6. Replace all existing code in the editor with the following worker JavaScript:
+            // export default {
+            //    async fetch(request, env) {
+            //       // Handle CORS Preflight request
+            //       if (request.method === "OPTIONS") {
+            //          return new Response(null, {
+            //             headers: {
+            //                "Access-Control-Allow-Origin": "*",
+            //                "Access-Control-Allow-Methods": "POST, OPTIONS",
+            //                "Access-Control-Allow-Headers": "Content-Type"
+            //             }
+            //          });
+            //       }
+
+            //       if (request.method !== "POST") {
+            //          return new Response(JSON.stringify({ success: false, error: "Method not allowed" }), {
+            //             status: 405,
+            //             headers: { "Content-Type": "application/json" }
+            //          });
+            //       }
+
+            //       try {
+            //          const data = await request.json();
+            //          const { name, text, timestamp } = data;
+
+            //          if (!name || !text) {
+            //             return new Response(JSON.stringify({ success: false, error: "Name and Comment are required." }), {
+            //                status: 400,
+            //                headers: { "Content-Type": "application/json" }
+            //             });
+            //          }
+
+            //          // Format CSV line escaping quotes
+            //          const csvEscape = (val) => String(val || "").replace(/"/g, '""');
+            //          const newCsvLine = `"${csvEscape(name)}","${csvEscape(text)}","${csvEscape(timestamp)}"`;
+
+            //          // GitHub API parameters from Environment Variables
+            //          const repoOwner = env.GITHUB_OWNER;
+            //          const repoName  = env.GITHUB_REPO;
+            //          const filePath  = env.FILE_PATH || "Comments.csv";
+            //          const branch    = env.GITHUB_BRANCH || "main";
+            //          const token     = env.GITHUB_TOKEN;
+
+            //          const githubApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}?ref=${branch}`;
+
+            //          // 1. Fetch current file details from GitHub
+            //          const getFileResponse = await fetch(githubApiUrl, {
+            //             headers: {
+            //                "Authorization": `Bearer ${token}`,
+            //                "User-Agent": "Cloudflare-Worker-Comments",
+            //                "Accept": "application/vnd.github.v3+json"
+            //             }
+            //          });
+
+            //          let sha = "";
+            //          let existingContent = "";
+
+            //          if (getFileResponse.status === 200) {
+            //             const fileData = await getFileResponse.json();
+            //             sha = fileData.sha;
+            //             // Decode base64 UTF-8 string
+            //             const binaryStr = atob(fileData.content.replace(/\s/g, ''));
+            //             const bytes = Uint8Array.from(binaryStr, char => char.charCodeAt(0));
+            //             existingContent = new TextDecoder().decode(bytes);
+            //          } 
+            //          else if (getFileResponse.status !== 404) {
+            //             const errText = await getFileResponse.text();
+            //             return new Response(JSON.stringify({ success: false, error: `GitHub API error: ${errText}` }), {
+            //                status: 500,
+            //                headers: { "Content-Type": "application/json" }
+            //             });
+            //          }
+
+            //          // Prepend new line to top of file
+            //          if (existingContent && !existingContent.endsWith("\n")) {
+            //             existingContent = "\n" + existingContent;
+            //          }
+            //          const updatedContent = **newCsvLine + "\n" + existingContent**;
+
+            //          // Encode UTF-8 string to base64
+            //          const utf8Bytes = new TextEncoder().encode(updatedContent);
+            //          let binaryStr = "";
+            //          utf8Bytes.forEach(b => binaryStr += String.fromCharCode(b));
+            //          const base64Content = btoa(binaryStr);
+
+            //          // 2. Commit updated file back to GitHub
+            //          const putResponse = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
+            //             method: "PUT",
+            //             headers: {
+            //                "Authorization": `Bearer ${token}`,
+            //                "User-Agent": "Cloudflare-Worker-Comments",
+            //                "Accept": "application/vnd.github.v3+json",
+            //                "Content-Type": "application/json"
+            //             },
+            //             body: JSON.stringify({
+            //                message: `Add comment from ${name}`,
+            //                content: base64Content,
+            //                sha: sha || undefined,
+            //                branch: branch
+            //             })
+            //          });
+
+            //          if (putResponse.ok) {
+            //             return new Response(JSON.stringify({ success: true }), {
+            //                headers: {
+            //                   "Content-Type": "application/json",
+            //                   "Access-Control-Allow-Origin": "*"
+            //                }
+            //             });
+            //          } 
+            //          else {
+            //             const errData = await putResponse.json();
+            //             return new Response(JSON.stringify({ success: false, error: errData.message || "Failed to commit comment." }), {
+            //                status: 500,
+            //                headers: {
+            //                   "Content-Type": "application/json",
+            //                   "Access-Control-Allow-Origin": "*"
+            //                }
+            //             });
+            //          }
+            //       } catch (err) {
+            //          return new Response(JSON.stringify({ success: false, error: err.message }), {
+            //             status: 500,
+            //             headers: {
+            //                "Content-Type": "application/json",
+            //                "Access-Control-Allow-Origin": "*"
+            //             }
+            //          });
+            //       }
+            //    }
+            // };
+
+            // 7. Click Save and Deploy.
+            // 8. Go back to your Worker settings by clicking Settings >>> Variables.
+            // 9. Under Environment Variables, click Add to add the following variables:
+            //    a. GITHUB_TOKEN: Your Personal Access Token (mark as Secret)
+            //    b. GITHUB_OWNER: Your GitHub username or organization name
+            //    c. GITHUB_REPO: Your repository name
+            //    d. GITHUB_BRANCH: main (or gh-pages depending on your setup)
+            //    e. FILE_PATH: Comments.csv
+            // 10. Save and deploy again. Note down your Worker URL (e.g., [https://github-comment-proxy.your-subdomain.workers.dev](https://github-comment-proxy.your-subdomain.workers.dev) ).
+            // B. JavaScript Code for the "else" Branch:
+            // 1. Paste the following snippet into the else block of your addEventListener script. Be sure to update the WORKER_URL variable with your actual Cloudflare Worker URL.
+
+            // UPDATE THIS URL to point to your Cloudflare Worker URL
+            // const WORKER_URL = "https://github-comment-proxy.your-subdomain.workers.dev";
+            // const Comments_CSV = "Comments.csv";
+
+            // const CommentSectionForm = document.getElementById('CommentSectionForm');
+            // if (CommentSectionForm) {
+            //    CommentSectionForm.addEventListener('submit', saveComment);
+            // }
+            // loadComments();
+
+            // function getCommentTimestamp() {
+            //    const now = new Date();
+            //    const yyyy = now.getFullYear();
+            //    const mm = String(now.getMonth() + 1).padStart(2, '0');
+            //    const dd = String(now.getDate()).padStart(2, '0');
+            //    const hh = String(now.getHours()).padStart(2, '0');
+            //    const mi = String(now.getMinutes()).padStart(2, '0');
+            //    const ss = String(now.getSeconds()).padStart(2, '0');
+            //    return `${yyyy}-${mm}-${dd}  ${hh}:${mi}:${ss}`;
+            // }
+
+            // function escapeHtml(value) {
+            //    return String(value ?? '')
+            //       .replace(/&/g, '&amp;')
+            //       .replace(/</g, '&lt;')
+            //       .replace(/>/g, '&gt;')
+            //       .replace(/"/g, '&quot;')
+            //       .replace(/'/g, '&#39;');
+            // }
+
+            // function parseCsvLine(line) {
+            //    const fields = [];
+            //    let current = '';
+            //    let inQuotes = false;
+
+            //    for (let i = 0; i < line.length; i++) {
+            //       const ch = line[i];
+            //       if (ch === '"') {
+            //          if (inQuotes && line[i + 1] === '"') {
+            //             current += '"';
+            //             i++;
+            //          } 
+            //          else {
+            //             inQuotes = !inQuotes;
+            //          }
+            //       } 
+            //       else 
+            //          if (ch === ',' && !inQuotes) {
+            //             fields.push(current);
+            //             current = '';
+            //          } 
+            //          else {
+            //             current += ch;
+            //          }
+            //    }
+            //    fields.push(current);
+            //    return fields;
+            // }
+
+            // function saveComment(event) {
+            //    event.preventDefault();
+
+            //    const CommentSectionInputName = document.getElementById('CommentSectionInputName');
+            //    const CommentSectionInputText = document.getElementById('CommentSectionInputText');
+            //    const CommentSectionSubmitMessage = document.getElementById('CommentSectionSubmitMessage');
+
+            //    if (!CommentSectionInputName || !CommentSectionInputText || !CommentSectionSubmitMessage) return;
+
+            //    const CommentInputName = CommentSectionInputName.value.trim();
+            //    const CommentInputText = CommentSectionInputText.value.trim();
+
+            //    if (!CommentInputName || !CommentInputText) {
+            //       CommentSectionSubmitMessage.textContent = 'Message:  Enter both your Name and your Comments before clicking Submit.';
+            //       return;
+            //    }
+
+            //    const timestamp = getCommentTimestamp();
+            //    CommentSectionSubmitMessage.textContent = 'Message:  Saving Name and Comments...';
+
+            //    fetch(WORKER_URL, {
+            //       method: 'POST',
+            //       headers: { 'Content-Type': 'application/json' },
+            //       body: JSON.stringify({
+            //          name: CommentInputName,
+            //          text: CommentInputText,
+            //          timestamp: timestamp
+            //       })
+            //    })
+            //    .then(response => response.json())
+            //    .then(result => {
+            //       if (result.success) {
+            //          CommentSectionInputName.value = '';
+            //          CommentSectionInputText.value = '';
+                     
+                     // Give GitHub Pages a few seconds to process the commit before refreshing
+            //          CommentSectionSubmitMessage.textContent = 'Message:  Name and Comments saved. Updating list...';
+            //          setTimeout(() => {
+            //             loadComments().then(() => {
+            //                CommentSectionSubmitMessage.textContent = 'Message:  Name and Comments saved.';
+            //             });
+            //          }, 3000);
+            //       } 
+            //       else {
+            //          CommentSectionSubmitMessage.textContent = result.error || 'Message:  Name and Comments NOT saved.';
+            //       }
+            //    })
+            //    .catch((err) => {
+            //       console.error(err);
+            //       CommentSectionSubmitMessage.textContent = 'Message:  Name and Comments NOT saved. Check network connection or Cloudflare Worker setup.';
+            //    });
+            // }
+
+            // function loadComments() {
+            //    const CommentSectionPostedText = document.getElementById('CommentSectionPostedText');
+            //    if (!CommentSectionPostedText) return Promise.resolve();
+
+            //    return fetch(`${Comments_CSV}?_=${Date.now()}`, { cache: 'no-store' })
+            //    .then(response => {
+            //       if (!response.ok) throw new Error('Message:  Comments.csv file not found.');
+            //       return response.text();
+            //    })
+            //    .then(text => {
+            //       const rows = text.trim().split(/\r?\n/).filter(line => line.trim());
+            //       if (!rows.length) {
+            //          CommentSectionPostedText.innerHTML = '<div style="padding: 6px; border-bottom: 2px dashed; opacity:0.75;">Message:  Comments not entered yet.</div>';
+            //          return;
+            //       }
+
+            //       CommentSectionPostedText.innerHTML = rows.map(formatCommentLine).join('');
+            //    })
+            //    .catch(() => {
+            //       CommentSectionPostedText.innerHTML = '<div style="padding: 6px; border-bottom: 2px dashed; opacity:0.75;">Message:  Comments not entered yet.</div>';
+            //    });
+            // }
+
+            // function formatCommentLine(line) {
+            //    if (!line || !line.trim()) return '';
+
+            //    const trimmed = line.trim();
+            //    const fields = parseCsvLine(trimmed);
+
+            //    if (fields.length >= 3) {
+            //       const cleanField = (f) => f.trim().replace(/^"|"$/g, '').replace(/""/g, '"');
+
+            //       const name      = cleanField(fields[0]);
+            //       const comment   = cleanField(fields[1]);
+            //       const timestamp = cleanField(fields[2]);
+
+            //       return `<div style="padding: 6px; border-bottom: 2px dashed; opacity:0.75;">` +
+            //             `<div><strong>Name:  </strong>${escapeHtml(name || 'Unknown')}</div>` +
+            //             `<div><strong>Comment:  </strong>${escapeHtml(comment || '')}</div>` +
+            //             `<div><strong>Date/Time:  </strong>${escapeHtml(timestamp || '')}</div>` +
+            //             `</div>`;
+            //    }
+
+            //    const match = trimmed.match(/^"(.*)"$/);
+            //    const text = match ? match[1].replace(/""/g, '"') : trimmed;
+
+            //    return `<div>${escapeHtml(text)}</div>`;
+            // }
+
+            // Note on GitHub Pages latency: 
+            // When a user posts a comment, GitHub API commits directly to your Git repository. 
+            // It usually takes 1 to 5 seconds for GitHub Pages to rebuild and serve the newly updated Comments.csv file. 
+            // The 3-second delay included in the setTimeout helps ensure the updated file is pulled when loadComments() is re-invoked.
+
+            // Secure Comment Submission System via Cloudflare Worker Proxy
+            //    Notice there are no tokens, passwords, or secrets here, only the public Worker URL.
+            //    1. No Token Exposure:  The token only lives inside Cloudflare's server environment. Even if someone inspects the HTTP network requests inDevTools, they will only see a POST request to your worker URL with {"name": "...", "text": "..."}.
+            //    2. GitHub Friendly:    GitHub secret scanners will never detect or revoke your token because it stays off Git repositories completely.
+            //    3. Generous Free Tier: Cloudflare Workers gives you 100,000 free requests per day, which is more than enough for a personal site orcomment system.
+         }
+      });
       // ****************************************************************************************************
       // ****************************************************************************************************
       // ****************************************************************************************************
@@ -5224,6 +5659,8 @@
          }
 
          document.body.style.zoom = ZoomLevel;
+
+         WindowScrollToTopOfPage();
       }
       // ****************************************************************************************************
       // ****************************************************************************************************
@@ -5595,12 +6032,47 @@
             ReleaseNotesContent.style.maxHeight = '0';
             setCollapsedIcon(ArrowIconZ1a6a);
          }
+
+         ExpandReleaseNotes();
+      }
+      // ****************************************************************************************************
+      // ****************************************************************************************************
+      // ****************************************************************************************************
+      function ExpandReleaseNotes() {
+         const BodyElement           = document.body;
+         const BodyBackgroundColor   = getComputedStyle(BodyElement).backgroundColor;
+         const ReleaseNotesContent   = document.getElementById('ReleaseNotesContent');
+         const ArrowIconZ1a6a        = document.getElementById('ArrowIconZ1a6a');
+
+         // This function must be placed right here, before the if statements below it that call it.
+         // Otherwise if this function is placed after all of the if statements, only the first if statement that calls it will be executed, and the rest of the if statements will not be executed. 
+         const setCollapsedIcon = (arrowIcon) => {
+            if (!arrowIcon) return;
+            if (BodyBackgroundColor === 'rgb(255, 0, 122)') {              // Red  '#FF007A'
+               arrowIcon.src = Icon_Small_Expanded_1_PNG;
+            } else if (BodyBackgroundColor === 'rgb(0, 151, 0)') {         // Green '#009700'
+               arrowIcon.src = Icon_Small_Expanded_2_PNG;
+            } else if (BodyBackgroundColor === 'rgb(0, 122, 255)') {       // Blue '#007AFF'
+               arrowIcon.src = Icon_Small_Expanded_3_PNG;
+            }
+         };
+
+         if (ReleaseNotesContent) {
+            ReleaseNotesContent.style.maxHeight = ReleaseNotesContent.scrollHeight + 'px';
+            setCollapsedIcon(ArrowIconZ1a6a);
+         }
       }
       // ****************************************************************************************************
       // ****************************************************************************************************
       // ****************************************************************************************************
       function WindowScrollToTopOfPage() {
-         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+         window.scrollTo({ 
+            top:      0, 
+            left:     0, 
+            behavior: 'smooth'
+         });
+
+         ExpandReleaseNotes();
       }
       // ****************************************************************************************************
       // ****************************************************************************************************
@@ -5615,6 +6087,8 @@
             left:     0,
             behavior: 'smooth'
          });
+
+         ExpandReleaseNotes();
       }
       // ****************************************************************************************************
       // ****************************************************************************************************
