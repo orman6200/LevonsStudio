@@ -11,14 +11,12 @@
       /* **************************************************************************************************** */
       /* **************************************************************************************************** */
       /* **************************************************************************************************** */
-      /* White:     R=255 G=255 B=255 Hex=#ffffff                                                             */
-      /* Black:     R=0   G=0   B=0   Hex=#000000                                                             */
-      /* Red(Rose): R=255 G=0   B=122 Hex=#FF007A                                                             */
-      /* Blue:      R=0   G=122 B=255 Hex=#007AFF                                                             */
-      /* Green:     R=0   G=151 B=0   Hex=#009700                                                             */
-      /* Orange:    R=255 G=133 B=0   Hex=#FF8500                                                             */
-      /* Blue:      R=0   G=122 B=255 Hex=#007AFF                                                             */
-      /* Pink:      R=255 G=0   B=240 Hex=#FF00F0                                                             */
+      /* White:     R=255 G=255 B=255 Hex=#ffffff          Red(Rose): R=255 G=0   B=122 Hex=#FF007A           */
+      /* Black:     R=0   G=0   B=0   Hex=#000000          Blue:      R=0   G=122 B=255 Hex=#007AFF           */
+      /*                                                   Green:     R=0   G=151 B=0   Hex=#009700           */
+      /*                                                   Orange:    R=255 G=133 B=0   Hex=#FF8500           */
+      /*                                                   Blue:      R=0   G=122 B=255 Hex=#007AFF           */
+      /*                                                   Pink:      R=255 G=0   B=240 Hex=#FF00F0           */
       /* **************************************************************************************************** */
       /* Percent:   100%  95%  90%  85%  80%  75%  70%  65%  60%  55% 50% 45% 40% 35% 30% 25% 20% 15% 10% 5%  */
       /* Width:     1920 1824 1728 1632 1536 1440 1344 1248 1152 1056 960 864 768 672 576 480 384 288 192 96  */
@@ -27,28 +25,28 @@
       /* **************************************************************************************************** */
       /* **************************************************************************************************** */
       body {
-         background-color:                              var(--ThemeColor-1);
-         color:                                            var(--TextColor);
-         padding:                                                       0px;
-         font-family:                 Arial, Verdana, Helvetica, sans-serif;
-         background-image:               Logo_Background_MusicalNotes_1_PNG;   /* PNG or WebP for transparency                    */
-         background-repeat:                                          repeat;   /* repeat, no-repeat, repeat-x, repeat-y           */
-         background-size:                                             cover;   /* cover, auto, contain, fixed pixel size, percent */
-         background-position:                                      top left;   /* top left, top right, top, center                */
-         background-attachment:                                       fixed;   /* fixed, scroll, local                            */
-         zoom:                                                            1;   /* Per Google AI, all major browsers like Edge, Chrome, Firefox, and Safari support the zoom property. */
-         transition:                                         zoom 0.5s ease;   /* Per Google AI, only browsers Edge and Chrome support the transition property for zoom.              */
+         background-color:                     var(--ThemeColor-1);
+         color:                                   var(--TextColor);
+         padding:                                              0px;
+         font-family:        Arial, Verdana, Helvetica, sans-serif;
+         background-image:      Logo_Background_MusicalNotes_1_PNG;   /* PNG or WebP for transparency                    */
+         background-repeat:                                 repeat;   /* repeat, no-repeat, repeat-x, repeat-y           */
+         background-size:                                    cover;   /* cover, auto, contain, fixed pixel size, percent */
+         background-position:                             top left;   /* top left, top right, top, center                */
+         background-attachment:                              fixed;   /* fixed, scroll, local                            */
+         zoom:                                                   1;   /* Per Google AI, all major browsers like Edge, Chrome, Firefox, and Safari support the zoom property. */
+         transition:                                zoom 0.5s ease;   /* Per Google AI, only browsers Edge and Chrome support the transition property for zoom.              */
       }
       header {
       }
       main {
-         color:                                            var(--TextColor);
-         padding:                                                       0px;
-         font-family:                 Arial, Verdana, Helvetica, sans-serif;
-         display:                                                      flex;
-         flex-direction:                                             column;
-         justify-content:                                            center;
-         align-items:                                                center;
+         color:                                   var(--TextColor);
+         padding:                                              0px;
+         font-family:        Arial, Verdana, Helvetica, sans-serif;
+         display:                                             flex;
+         flex-direction:                                    column;
+         justify-content:                                   center;
+         align-items:                                       center;
       }
       footer {
       }
@@ -2555,7 +2553,7 @@
          border-bottom:              var(--Section-X0x0-Button-Border-Bottom) solid var(--ThemeColor-1);
          border-left:                var(--Section-X0x0-Button-Border-Left)   solid var(--ThemeColor-1);
          border-right:               var(--Section-X0x0-Button-Border-right)  solid var(--ThemeColor-1);
-         opacity:                    0.75;
+         opacity:                    1.00;
          cursor:                     pointer;
          pointer-events:             none;
       }
@@ -2932,6 +2930,7 @@
          border-bottom-left-radius:  var(--Section-X0x0-Button-Border-BottomLeft-Radius);
          border-bottom-right-radius: var(--Section-X0x0-Button-Border-BottomRight-Radius);
          font-weight:                bold;
+         cursor:                     pointer;
          pointer-events:             auto;
       }
       #ArrowIconZ1a5a {
@@ -2951,11 +2950,27 @@
          align-items:                flex-start;
          vertical-align:             top;
       }
-      #PageFooterButtonZ1a5b, #PageFooterButtonZ1a5c, #PageFooterButtonZ1a5d, #PageFooterButtonZ1a5e, #PageFooterButtonZ1a5f {
+      #PageFooterButtonZ1a5b, #PageFooterButtonZ1a5c, #PageFooterButtonZ1a5d, #PageFooterButtonZ1a5e, #PageFooterButtonZ1a5f, 
+      #PageFooterButtonZ1a5g, #PageFooterButtonZ1a5h, #PageFooterButtonZ1a5i, #PageFooterButtonZ1a5j {
          margin-bottom:              0px;
       }
-      #PageFooterButtonZ1a5g {
+      #PageFooterButtonZ1a5k {
          margin-bottom:              6px;
+         background-color:           transparent;
+      }
+      #PageFooterButtonZ1a5k a {
+         color:                      var(--TextColor);
+         font-weight:                bold;
+         text-decoration:            none;
+         cursor:                     pointer;
+         pointer-events:             auto;
+      }
+      #PageFooterButtonZ1a5k a:hover {
+         background-color:           var(--ThemeColor-2);
+         border-top-left-radius:     var(--Section-X0x0-Button-Border-TopLeft-Radius);
+         border-top-right-radius:    var(--Section-X0x0-Button-Border-TopRight-Radius);
+         border-bottom-left-radius:  var(--Section-X0x0-Button-Border-BottomLeft-Radius);
+         border-bottom-right-radius: var(--Section-X0x0-Button-Border-BottomRight-Radius);
       }
       /* ************************************************** */
       .Section-Z1a6 {
@@ -3384,11 +3399,15 @@
 
                   <div id="OtherNotesContent">
                      <button id="PageFooterButtonZ1a5b"><span class="SpanFontWeight">Warning:   </span>This Web App is designed to run on Microsoft Edge and Google Chrome computer browser (it will run mostly ok on Mozilla Firefox; it will definitely have issues on Apple Safari). Also, it isn't designed for Mobile devices. However, a tablet with full Edge or Chrome browser seems to be fine.</button>
-                     <button id="PageFooterButtonZ1a5c"><span class="SpanFontWeight">News:   </span>Design changes with releasse version v1.0D: a new Stop button, next to the existing Play and Pause buttons.</button>
-                     <button id="PageFooterButtonZ1a5d"><span class="SpanFontWeight">News:   </span>Design changes with releasse version v2.0D: a picture preview on mouse hover for each music video, and the disabling of native Youtube controls on the videos (with the exception of commercial Skip button at the bottom right corner when it appears).</button>
-                     <button id="PageFooterButtonZ1a5e"><span class="SpanFontWeight">News:   </span>Design changes with releasse version v3.0D: a new set of Zoom level buttons in the top left corner, allowing resizing of my entire Web Application to fit various monitor sizes/resolutions.</button>
-                     <button id="PageFooterButtonZ1a5f"><span class="SpanFontWeight">News:   </span>??????</button>
-                     <button id="PageFooterButtonZ1a5g"><span class="SpanFontWeight">Contact:   </span>Feel free to shoot me an email if you like, for any reason:  janus0123@gmail.com</button>
+                     <button id="PageFooterButtonZ1a5c"><span class="SpanFontWeight">News:   </span>Releasse Version v1.0D: Added "Stop" button, next to the existing "Play" and "Pause" buttons.</button>
+                     <button id="PageFooterButtonZ1a5d"><span class="SpanFontWeight">News:   </span>Releasse Version v2.0D: Added picture preview on mouse hover for each music video in the main video viewer, and disabled native Youtube controls in the main video viewer (with the exception of commercial Skip button at the bottom right corner, when it appears).</button>
+                     <button id="PageFooterButtonZ1a5e"><span class="SpanFontWeight">News:   </span>Releasse Version v3.0D: Added set of "Zoom" level buttons in the top left corner, allowing resizing of my entire Web Application to fit various monitor sizes/resolutions.</button>
+                     <button id="PageFooterButtonZ1a5f"><span class="SpanFontWeight">News:   </span>Releasse Version v4.0D: Added small picture viewer for picture preview on mouse hover for each music video.</button>
+                     <button id="PageFooterButtonZ1a5g"><span class="SpanFontWeight">News:   </span>Releasse Version v5.0D: Added visitor "Posted Comments" section, allowing visitors to submit their feedback ("Name" and "Comment").</button>
+                     <button id="PageFooterButtonZ1a5h"><span class="SpanFontWeight">News:   </span>??????</button>
+                     <button id="PageFooterButtonZ1a5i"><span class="SpanFontWeight">News:   </span>??????</button>
+                     <button id="PageFooterButtonZ1a5j"><span class="SpanFontWeight">News:   </span>??????</button>
+                     <button id="PageFooterButtonZ1a5k"><span class="SpanFontWeight">Contact:   </span>Feel free to shoot me an email if you like, for any reason:   <a href="mailto:janus0123@gmail.com"> janus0123@gmail.com </a></button>
                   </div>
                </div>
 
@@ -3485,13 +3504,13 @@
       //    It works perfectly on Github for public access to my web app. 
       // ****************************************************************************************************
       function isLocalClassicASPHost() {
-         const host = window.location.hostname.toLowerCase();
+         const  host =   window.location.hostname.toLowerCase();
          return host === "localhost" || host === "127.0.0.1" || host === "::1";
       }
 
       document.addEventListener('DOMContentLoaded', () => {
-         if (isLocalClassicASPHost()) {   // The code in the "if" part is run if local IIS with Classic ASP is detected.
-            const Comments_CSV = "Comments.csv";
+         if (isLocalClassicASPHost()) {   // The code in this "if" block is run if local IIS host with Classic ASP is detected.
+            const Comments_CSV     = "Comments.csv";
             const Comment_Save_ASP = "Comment-Save.asp";
 
             const CommentSectionForm = document.getElementById('CommentSectionForm');
@@ -3607,13 +3626,13 @@
                .then(text => {
                   const rows = text.trim().split(/\r?\n/).filter(line => line.trim());
                   if (!rows.length) {
-                     CommentSectionPostedText.innerHTML = '<div style="padding: 6px; border-bottom: 2px dashed; opacity:0.75;">Message:  Comments not entered yet.</div>';
+                     CommentSectionPostedText.innerHTML = '<div style="padding: 6px; border-bottom: 2px dashed; opacity:1.00;">Message:  Comments not entered yet.</div>';
                      return;
                   }
                   CommentSectionPostedText.innerHTML = rows.map(formatCommentLine).join('');
                })
                .catch(() => {
-                  CommentSectionPostedText.innerHTML = '<div style="padding: 6px; border-bottom: 2px dashed; opacity:0.75;">Message:  Comments not entered yet.</div>';
+                  CommentSectionPostedText.innerHTML = '<div style="padding: 6px; border-bottom: 2px dashed; opacity:1.00;">Message:  Comments not entered yet.</div>';
                });
             }
 
@@ -3645,8 +3664,22 @@
                return `<div>${escapeHtml(text)}</div>`;
             }
          } 
-         // else {   // The code in the "else" part is run if GitHub REST API with Cloudflare Worker is detected.
+         else {   // The code in this "else" block will be removed once the next "else" block is implemented (when GitHub REST API with Cloudflare Worker is detected).
+            const CommentSectionForm = document.getElementById('CommentSectionForm');
+            if (CommentSectionForm) {
+               CommentSectionForm.addEventListener('submit', saveCommentError);
+            }
 
+            function saveCommentError(event) {
+               event.preventDefault();
+               const CommentSectionSubmitMessage = document.getElementById('CommentSectionSubmitMessage');
+               CommentSectionSubmitMessage.textContent = 'Message:  This new feature is not yet fully functional.';
+
+               const CommentSectionPostedText = document.getElementById('CommentSectionPostedText');
+               CommentSectionPostedText.innerHTML = 'This new feature is not yet fully functional.';
+            }
+         }
+         // else {   // The code in this "else" block is run if GitHub REST API with Cloudflare Worker is detected.
             // ****************************************************************************************************
             // Create the Free Cloudflare Worker (Server Proxy)
             //    1. Go to Cloudflare.com and create a free account.
