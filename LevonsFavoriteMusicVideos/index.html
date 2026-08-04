@@ -2367,6 +2367,28 @@
       .Section-F1a2 button:hover {
          background-color:           var(--ThemeColor-2);
       }
+      /* ************************* */
+      .Section-F1a2-Container1 {
+         width:                      928px;   /* 456 + 2+6 + 6+2 + 456 = 928 */
+         height:                     46px;
+         background-color:           var(--ThemeColor-1);
+         border-top:                 var(--Section-X0x0-Border-Top)    solid var(--ThemeColor-2);
+         border-bottom:              var(--Section-X0x0-Border-Bottom) solid var(--ThemeColor-2);
+         border-left:                var(--Section-X0x0-Border-Left)   solid var(--ThemeColor-2);
+         border-right:               var(--Section-X0x0-Border-right)  solid var(--ThemeColor-2);
+         border-top-left-radius:     var(--Section-X0x0-Border-TopLeft-Radius);
+         border-top-right-radius:    var(--Section-X0x0-Border-TopRight-Radius);
+         border-bottom-left-radius:  var(--Section-X0x0-Border-BottomLeft-Radius);
+         border-bottom-right-radius: var(--Section-X0x0-Border-BottomRight-Radius);
+         margin-top:                 6px;
+         margin-bottom:              6px;
+         margin-left:                6px;
+         margin-right:               6px;
+         display:                    flex;
+         flex-direction:             row;
+         align-items:                flex-start;
+         vertical-align:             top;
+      }
       #CommentSectionTitle {
          background-color:           var(--ThemeColor-2);
          vertical-align:             top;
@@ -2374,14 +2396,14 @@
          pointer-events:             none;
       }
       /* ************************* */
-      .Section-F1a2-Container {
+      .Section-F1a2-Container2 {
          display:                    flex;
          flex-direction:             row;
          align-items:                flex-start;
          vertical-align:             top;
       }
       /* ************************* */
-      .Section-F1a2-Container1 {
+      .Section-F1a2-Container2a {
          display:                    flex;
          flex-direction:             column;
          align-items:                flex-start;
@@ -2389,7 +2411,7 @@
       }
       #CommentSectionPostedText {
          width:                      456px;
-         height:                     478px;
+         height:                     464px;
          background-color:           var(--ThemeColor-1);
          border-top:                 var(--Section-X0x0-Button-Border-Top)    solid var(--ThemeColor-2);
          border-bottom:              var(--Section-X0x0-Button-Border-Bottom) solid var(--ThemeColor-2);
@@ -2430,7 +2452,7 @@
          display:                    block;
       }
       /* ************************* */
-      .Section-F1a2-Container2 {
+      .Section-F1a2-Container2b {
          display:                    flex;
          flex-direction:             column;
          align-items:                flex-start;
@@ -2438,7 +2460,7 @@
       }
       #CommentSectionForm {
          width:                      456px;
-         height:                     478px;
+         height:                     464px;
          background-color:           var(--ThemeColor-1);
          border-top:                 var(--Section-X0x0-Button-Border-Top)    solid var(--ThemeColor-2);
          border-bottom:              var(--Section-X0x0-Button-Border-Bottom) solid var(--ThemeColor-2);
@@ -2509,7 +2531,7 @@
       }
       #CommentSectionInputText {
          width:                      432px;
-         height:                     144px;
+         height:                     130px;
          background-color:           var(--ThemeColor-1);
          border-top:                 var(--Section-X0x0-Button-Border-Top)    solid var(--ThemeColor-2);
          border-bottom:              var(--Section-X0x0-Button-Border-Bottom) solid var(--ThemeColor-2);
@@ -3161,8 +3183,8 @@
             <div class="Section-D1a">
                <div class="Section-D1a-Container1">
                   <div class="Section-D1a1">
-                     <button id="PlayListTextButton">PLAY LIST:</button>
-                     <button id="PlayListNameButton">Click one from list below, first.</button>
+                     <button id="PlayListTextButton">Play List:</button>
+                     <button id="PlayListNameButton">Click one from list below.</button>
                   </div>
 
                   <!-- Buttons will be dynamically generated from the .csv file. /-->
@@ -3176,8 +3198,8 @@
 
                <div class="Section-D1a-Container2">
                   <div class="Section-D1a4">
-                     <button id="VideoListTextButton">VIDEO LIST:</button>
-                     <button id="VideoListNameButton">Click one from list below, second.</button>
+                     <button id="VideoListTextButton">Video List:</button>
+                     <button id="VideoListNameButton">Click one from list below, next.</button>
                   </div>
                   <div class="Section-D1a5-VideoList" id="Section-D1a5-VideoList" style="display: block;"></div>
                   <!-- Buttons will be dynamically generated from the .csv file. /-->
@@ -3293,12 +3315,16 @@
                   </div>
 
                   <div class="Section-F1a2">
-                     <button id="CommentSectionTitle" type="button">Posted Comments:</button>
-                     <div class="Section-F1a2-Container">
-                        <div class="Section-F1a2-Container1">
+                     <div class="Section-F1a2-Container1">
+                        <button id="CommentSectionTitle" type="button">Posted Comments:</button>
+                     </div>
+ 
+                     <div class="Section-F1a2-Container2">
+                        <div class="Section-F1a2-Container2a">
                            <div id="CommentSectionPostedText"></div>
                         </div>
-                        <div class="Section-F1a2-Container2">
+
+                        <div class="Section-F1a2-Container2b">
                            <form id="CommentSectionForm">
                               <button   id="CommentSectionInputNameTitle" type="button">Name:</button>
                               <textarea id="CommentSectionInputName" placeholder="Enter your name (required)..."></textarea>
@@ -4225,7 +4251,7 @@
                firstPlayListBtn.click();
             }
             if (PlayListNameButton && PlayListButton) {
-               PlayListNameButton.innerHTML         = 'Click one from list below, first.';
+               PlayListNameButton.innerHTML         = 'Click one from list below.';
                PlayListButton.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
             }
 
@@ -5117,12 +5143,12 @@
 
          // const PlayListNameButton               = document.getElementById('PlayListNameButton');
          // if (PlayListNameButton) {
-         //    PlayListNameButton.innerHTML        = "Click one from list below, first.";
+         //    PlayListNameButton.innerHTML        = "Click one from list below.";
          // }
 
          const VideoListNameButton              = document.getElementById('VideoListNameButton');
          if (VideoListNameButton) {
-            VideoListNameButton.innerHTML       = "Click one from list below, second.";
+            VideoListNameButton.innerHTML       = "Click one from list below, next.";
          }
 
          const PlayListButtons                  = document.querySelectorAll('.Section-D1a2-PlayList button');
@@ -5275,7 +5301,7 @@
             firstPlayListBtn.click();
          }
          if (PlayListNameButton && PlayListButton) {
-            PlayListNameButton.innerHTML         = 'Click one from list below, first.';
+            PlayListNameButton.innerHTML         = 'Click one from list below.';
             PlayListButton.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
          }
 
@@ -5335,7 +5361,7 @@
 
          const VideoListNameButton              = document.getElementById('VideoListNameButton');
          if (VideoListNameButton) {
-            VideoListNameButton.innerHTML       = "Click one from list below, second.";
+            VideoListNameButton.innerHTML       = "Click one from list below, next.";
          }
 
          const VideoLists = [
