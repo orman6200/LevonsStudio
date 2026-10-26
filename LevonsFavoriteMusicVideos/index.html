@@ -78,12 +78,12 @@
          --Section-F1a-Width:                               1936px;   /*           6+2 + 1920 + 2+6           */
          --Section-Z1a-Width:                               1936px;   /*           6+2 + 1920 + 2+6           */
          /* ************************* */
-         /* A1a1+A1a2+A1a3+A1a4+A1a5 = 1920-(2+6+6+2 + 2+6+6+2 + 2+6+6+2 + 2+6+6+2) = 1856 = 504 + 24 + 800 + 264 + 264 */
+         /* A1a1+A1a2+A1a3+A1a4+A1a5 = 1920-(2+6+6+2 + 2+6+6+2 + 2+6+6+2 + 2+6+6+2) = 1856 = 504 + 24 + 800 + 208 + 320 */
          --Section-A1a1-Width:                               504px;   /*                  504                 */
          --Section-A1a2-Width:                                24px;   /*                   24                 */
          --Section-A1a3-Width:                               800px;   /*                  800                 */
-         --Section-A1a4-Width:                               264px;   /*                  264                 */
-         --Section-A1a5-Width:                               264px;   /*                  264                 */
+         --Section-A1a4-Width:                               208px;   /*                  208                 */
+         --Section-A1a5-Width:                               320px;   /*                  320                 */
          /* ********** */
          --Section-B1a1-Width:                              1920px;   /*                 1920                 */
          /* ********** */
@@ -228,7 +228,8 @@
       }
       /* **************************************************************************************************** */
       :root {
-         --FontSize:                                          24px;
+         --FontSize-Small:                                    24px;
+         --FontSize-Medium:                                   30px;
          --FontSize-Large:                                    36px;
          --FontFamily:                                       Arial;
 
@@ -263,7 +264,7 @@
          --ZoomLevelButton7:                                   0.4;   /* id = ZoomLevelButton7 =  40%                                      */
          --ZoomLevelButton8:                                   0.3;   /* id = ZoomLevelButton8 =  30%                                      */
          --ZoomLevelButton9:                                   0.2;   /* id = ZoomLevelButton9 =  20%                                      */
-         --ZoomLevelButtonIdDefault:            "ZoomLevelButton6";
+         --ZoomLevelButtonIdDefault:            "ZoomLevelButton5";
       }
       /* **************************************************************************************************** */
       :root {
@@ -833,7 +834,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -886,7 +887,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -933,7 +934,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -967,7 +968,7 @@
          border-bottom-left-radius:  var(--Section-X0x0-Button-Border-BottomLeft-Radius);
          border-bottom-right-radius: var(--Section-X0x0-Button-Border-BottomRight-Radius);
          margin-bottom:              0px;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          font-weight:                normal;
          white-space:                pre-wrap;
          vertical-align:             top;
@@ -1010,7 +1011,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -1060,7 +1061,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -1240,7 +1241,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          cursor:                     pointer;
          pointer-events:             none;
@@ -1276,7 +1277,7 @@
          margin-bottom:              6px;
          margin-left:                6px;
          margin-right:               6px;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          text-align:                 left;
          display:                    inline-block;
@@ -1326,7 +1327,7 @@
          margin-bottom:              6px;
          margin-left:                6px;
          margin-right:               6px;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          text-align:                 left;
          display:                    inline-block;
@@ -1377,7 +1378,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          cursor:                     pointer;
          pointer-events:             none;
@@ -1460,7 +1461,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          cursor:                     pointer;
          pointer-events:             none;
@@ -1496,7 +1497,7 @@
          margin-bottom:              6px;
          margin-left:                6px;
          margin-right:               6px;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          text-align:                 left;
          display:                    inline-block;
@@ -1546,7 +1547,7 @@
          margin-bottom:              6px;
          margin-left:                6px;
          margin-right:               6px;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          text-align:                 left;
          display:                    inline-block;
@@ -1602,7 +1603,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          cursor:                     pointer;
          pointer-events:             none;
@@ -1637,10 +1638,10 @@
          width:                      var(--Section-D1a1-Width);
          height:                     var(--Section-D1a1-Height);
          background-color:           var(--ThemeColor-1);
-         border-top:                 var(--Section-X0x0-Border-Top)    solid var(--ThemeColor-2);
-         border-bottom:              var(--Section-X0x0-Border-Bottom) solid var(--ThemeColor-2);
-         border-left:                var(--Section-X0x0-Border-Left)   solid var(--ThemeColor-2);
-         border-right:               var(--Section-X0x0-Border-right)  solid var(--ThemeColor-2);
+         border-top:                 var(--Section-X0x0-Border-Top)    solid var(--ThemeColor-1);
+         border-bottom:              var(--Section-X0x0-Border-Bottom) solid var(--ThemeColor-1);
+         border-left:                var(--Section-X0x0-Border-Left)   solid var(--ThemeColor-1);
+         border-right:               var(--Section-X0x0-Border-right)  solid var(--ThemeColor-1);
          border-top-left-radius:     var(--Section-X0x0-Border-TopLeft-Radius);
          border-top-right-radius:    var(--Section-X0x0-Border-TopRight-Radius);
          border-bottom-left-radius:  var(--Section-X0x0-Border-BottomLeft-Radius);
@@ -1670,7 +1671,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          cursor:                     pointer;
          pointer-events:             none;
@@ -1740,7 +1741,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          cursor:                     pointer;
          pointer-events:             auto;
@@ -1754,10 +1755,10 @@
          width:                      var(--Section-D1a3-Width);
          height:                     var(--Section-D1a3-Height);
          background-color:           var(--ThemeColor-1);
-         border-top:                 var(--Section-X0x0-Border-Top)    solid var(--ThemeColor-2);
-         border-bottom:              var(--Section-X0x0-Border-Bottom) solid var(--ThemeColor-2);
-         border-left:                var(--Section-X0x0-Border-Left)   solid var(--ThemeColor-2);
-         border-right:               var(--Section-X0x0-Border-right)  solid var(--ThemeColor-2);
+         border-top:                 var(--Section-X0x0-Border-Top)    solid var(--ThemeColor-1);
+         border-bottom:              var(--Section-X0x0-Border-Bottom) solid var(--ThemeColor-1);
+         border-left:                var(--Section-X0x0-Border-Left)   solid var(--ThemeColor-1);
+         border-right:               var(--Section-X0x0-Border-right)  solid var(--ThemeColor-1);
          border-top-left-radius:     var(--Section-X0x0-Border-TopLeft-Radius);
          border-top-right-radius:    var(--Section-X0x0-Border-TopRight-Radius);
          border-bottom-left-radius:  var(--Section-X0x0-Border-BottomLeft-Radius);
@@ -1787,7 +1788,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          cursor:                     pointer;
          pointer-events:             auto;
@@ -1808,10 +1809,10 @@
          width:                      var(--Section-D1a4-Width);
          height:                     var(--Section-D1a4-Height);
          background-color:           var(--ThemeColor-1);
-         border-top:                 var(--Section-X0x0-Border-Top)    solid var(--ThemeColor-2);
-         border-bottom:              var(--Section-X0x0-Border-Bottom) solid var(--ThemeColor-2);
-         border-left:                var(--Section-X0x0-Border-Left)   solid var(--ThemeColor-2);
-         border-right:               var(--Section-X0x0-Border-right)  solid var(--ThemeColor-2);
+         border-top:                 var(--Section-X0x0-Border-Top)    solid var(--ThemeColor-1);
+         border-bottom:              var(--Section-X0x0-Border-Bottom) solid var(--ThemeColor-1);
+         border-left:                var(--Section-X0x0-Border-Left)   solid var(--ThemeColor-1);
+         border-right:               var(--Section-X0x0-Border-right)  solid var(--ThemeColor-1);
          border-top-left-radius:     var(--Section-X0x0-Border-TopLeft-Radius);
          border-top-right-radius:    var(--Section-X0x0-Border-TopRight-Radius);
          border-bottom-left-radius:  var(--Section-X0x0-Border-BottomLeft-Radius);
@@ -1841,7 +1842,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          cursor:                     pointer;
          pointer-events:             none;
@@ -1954,7 +1955,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          cursor:                     pointer;
          pointer-events:             auto;
@@ -1980,10 +1981,10 @@
          width:                      var(--Section-D1a6-Width);
          height:                     var(--Section-D1a6-Height);
          background-color:           var(--ThemeColor-1);
-         border-top:                 var(--Section-X0x0-Border-Top)    solid var(--ThemeColor-2);
-         border-bottom:              var(--Section-X0x0-Border-Bottom) solid var(--ThemeColor-2);
-         border-left:                var(--Section-X0x0-Border-Left)   solid var(--ThemeColor-2);
-         border-right:               var(--Section-X0x0-Border-right)  solid var(--ThemeColor-2);
+         border-top:                 var(--Section-X0x0-Border-Top)    solid var(--ThemeColor-1);
+         border-bottom:              var(--Section-X0x0-Border-Bottom) solid var(--ThemeColor-1);
+         border-left:                var(--Section-X0x0-Border-Left)   solid var(--ThemeColor-1);
+         border-right:               var(--Section-X0x0-Border-right)  solid var(--ThemeColor-1);
          border-top-left-radius:     var(--Section-X0x0-Border-TopLeft-Radius);
          border-top-right-radius:    var(--Section-X0x0-Border-TopRight-Radius);
          border-bottom-left-radius:  var(--Section-X0x0-Border-BottomLeft-Radius);
@@ -2013,7 +2014,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          cursor:                     pointer;
          pointer-events:             none;
@@ -2036,10 +2037,10 @@
          width:                      var(--Section-E1a1-Width);
          height:                     var(--Section-E1a1-Height);
          background-color:           var(--ThemeColor-1);
-         border-top:                 var(--Section-X0x0-Border-Top)    solid var(--ThemeColor-2);
-         border-bottom:              var(--Section-X0x0-Border-Bottom) solid var(--ThemeColor-2);
-         border-left:                var(--Section-X0x0-Border-Left)   solid var(--ThemeColor-2);
-         border-right:               var(--Section-X0x0-Border-right)  solid var(--ThemeColor-2);
+         border-top:                 var(--Section-X0x0-Border-Top)    solid var(--ThemeColor-1);
+         border-bottom:              var(--Section-X0x0-Border-Bottom) solid var(--ThemeColor-1);
+         border-left:                var(--Section-X0x0-Border-Left)   solid var(--ThemeColor-1);
+         border-right:               var(--Section-X0x0-Border-right)  solid var(--ThemeColor-1);
          border-top-left-radius:     var(--Section-X0x0-Border-TopLeft-Radius);
          border-top-right-radius:    var(--Section-X0x0-Border-TopRight-Radius);
          border-bottom-left-radius:  var(--Section-X0x0-Border-BottomLeft-Radius);
@@ -2069,7 +2070,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          cursor:                     pointer;
          pointer-events:             none;
@@ -2104,10 +2105,10 @@
          width:                      var(--Section-E1a2-Width);
          height:                     var(--Section-E1a2-Height);
          background-color:           var(--ThemeColor-1);
-         border-top:                 var(--Section-X0x0-Border-Top)    solid var(--ThemeColor-2);
-         border-bottom:              var(--Section-X0x0-Border-Bottom) solid var(--ThemeColor-2);
-         border-left:                var(--Section-X0x0-Border-Left)   solid var(--ThemeColor-2);
-         border-right:               var(--Section-X0x0-Border-right)  solid var(--ThemeColor-2);
+         border-top:                 var(--Section-X0x0-Border-Top)    solid var(--ThemeColor-1);
+         border-bottom:              var(--Section-X0x0-Border-Bottom) solid var(--ThemeColor-1);
+         border-left:                var(--Section-X0x0-Border-Left)   solid var(--ThemeColor-1);
+         border-right:               var(--Section-X0x0-Border-right)  solid var(--ThemeColor-1);
          border-top-left-radius:     var(--Section-X0x0-Border-TopLeft-Radius);
          border-top-right-radius:    var(--Section-X0x0-Border-TopRight-Radius);
          border-bottom-left-radius:  var(--Section-X0x0-Border-BottomLeft-Radius);
@@ -2137,7 +2138,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          cursor:                     pointer;
          pointer-events:             none;
@@ -2215,7 +2216,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -2358,7 +2359,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      fit-content;
          cursor:                     pointer;
@@ -2372,10 +2373,10 @@
          width:                      928px;   /* 456 + 2+6 + 6+2 + 456 = 928 */
          height:                     46px;
          background-color:           var(--ThemeColor-1);
-         border-top:                 var(--Section-X0x0-Border-Top)    solid var(--ThemeColor-2);
-         border-bottom:              var(--Section-X0x0-Border-Bottom) solid var(--ThemeColor-2);
-         border-left:                var(--Section-X0x0-Border-Left)   solid var(--ThemeColor-2);
-         border-right:               var(--Section-X0x0-Border-right)  solid var(--ThemeColor-2);
+         border-top:                 var(--Section-X0x0-Border-Top)    solid var(--ThemeColor-1);
+         border-bottom:              var(--Section-X0x0-Border-Bottom) solid var(--ThemeColor-1);
+         border-left:                var(--Section-X0x0-Border-Left)   solid var(--ThemeColor-1);
+         border-right:               var(--Section-X0x0-Border-right)  solid var(--ThemeColor-1);
          border-top-left-radius:     var(--Section-X0x0-Border-TopLeft-Radius);
          border-top-right-radius:    var(--Section-X0x0-Border-TopRight-Radius);
          border-bottom-left-radius:  var(--Section-X0x0-Border-BottomLeft-Radius);
@@ -2427,7 +2428,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          overflow-wrap:              break-word;
          word-wrap:                  break-word;
@@ -2462,10 +2463,10 @@
          width:                      456px;
          height:                     464px;
          background-color:           var(--ThemeColor-1);
-         border-top:                 var(--Section-X0x0-Button-Border-Top)    solid var(--ThemeColor-2);
-         border-bottom:              var(--Section-X0x0-Button-Border-Bottom) solid var(--ThemeColor-2);
-         border-left:                var(--Section-X0x0-Button-Border-Left)   solid var(--ThemeColor-2);
-         border-right:               var(--Section-X0x0-Button-Border-right)  solid var(--ThemeColor-2);
+         border-top:                 var(--Section-X0x0-Button-Border-Top)    solid var(--ThemeColor-1);
+         border-bottom:              var(--Section-X0x0-Button-Border-Bottom) solid var(--ThemeColor-1);
+         border-left:                var(--Section-X0x0-Button-Border-Left)   solid var(--ThemeColor-1);
+         border-right:               var(--Section-X0x0-Button-Border-right)  solid var(--ThemeColor-1);
          border-top-left-radius:     var(--Section-X0x0-Button-Border-TopLeft-Radius);
          border-top-right-radius:    var(--Section-X0x0-Button-Border-TopRight-Radius);
          border-bottom-left-radius:  var(--Section-X0x0-Button-Border-BottomLeft-Radius);
@@ -2503,7 +2504,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          font-family:                var(--FontFamily);
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          text-align:                 left;
          white-space:                pre-wrap;
          resize:                     none;
@@ -2518,7 +2519,7 @@
       #CommentSectionInputName::placeholder {
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          font-family:                var(--FontFamily);
          white-space:                pre-wrap;
          opacity:                    1.00;
@@ -2547,7 +2548,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          font-family:                var(--FontFamily);
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          text-align:                 left;
          white-space:                pre-wrap;
          resize:                     none;
@@ -2562,7 +2563,7 @@
       #CommentSectionInputText::placeholder {
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          font-family:                var(--FontFamily);
          white-space:                pre-wrap;
          opacity:                    1.00;
@@ -2586,10 +2587,10 @@
          width:                      var(--Section-Z1a1-Width);
          height:                     var(--Section-Z1a1-Height);
          background-color:           var(--ThemeColor-1);
-         border-top:                 var(--Section-X0x0-Border-Top)    solid var(--ThemeColor-2);
-         border-bottom:              var(--Section-X0x0-Border-Bottom) solid var(--ThemeColor-2);
-         border-left:                var(--Section-X0x0-Border-Left)   solid var(--ThemeColor-2);
-         border-right:               var(--Section-X0x0-Border-right)  solid var(--ThemeColor-2);
+         border-top:                 var(--Section-X0x0-Border-Top)    solid var(--ThemeColor-1);
+         border-bottom:              var(--Section-X0x0-Border-Bottom) solid var(--ThemeColor-1);
+         border-left:                var(--Section-X0x0-Border-Left)   solid var(--ThemeColor-1);
+         border-right:               var(--Section-X0x0-Border-right)  solid var(--ThemeColor-1);
          border-top-left-radius:     var(--Section-X0x0-Border-TopLeft-Radius);
          border-top-right-radius:    var(--Section-X0x0-Border-TopRight-Radius);
          border-bottom-left-radius:  var(--Section-X0x0-Border-BottomLeft-Radius);
@@ -2619,7 +2620,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Medium);
          white-space:                pre-wrap;
          width:                      fit-content;
          cursor:                     pointer;
@@ -2670,7 +2671,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -2755,7 +2756,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -2839,7 +2840,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -2927,7 +2928,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -3028,7 +3029,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -3112,7 +3113,7 @@
                   </div>
 
                   <div class="Section-A1a3">
-                     <button id="PageTitleButton1">Levon's Favorite Music Videos</button>
+                     <button id="PageTitleButton1">Levon's  Favorite  Music  Videos</button>
                      <button id="PageTitleButton2">Eclectic . Rhythmic . Melodic . Harmonic . Groovy . Soulful</button>
                   </div>
 
@@ -3122,9 +3123,9 @@
                   </div>
 
                   <div class="Section-A1a5">
-                     <button id="ElementColorButton1" onclick="ClickedElementColorButton('ElementColorButton1')">Red  theme</button>
-                     <button id="ElementColorButton2" onclick="ClickedElementColorButton('ElementColorButton2')">Green  theme</button>
-                     <button id="ElementColorButton3" onclick="ClickedElementColorButton('ElementColorButton3')">Blue  theme</button>
+                     <button id="ElementColorButton1" onclick="ClickedElementColorButton('ElementColorButton1')">Red & Blue  theme</button>
+                     <button id="ElementColorButton2" onclick="ClickedElementColorButton('ElementColorButton2')">Green & Orange  theme</button>
+                     <button id="ElementColorButton3" onclick="ClickedElementColorButton('ElementColorButton3')">Blue & Pink  theme</button>
                   </div>
                </div>
             </div>
@@ -3347,7 +3348,7 @@
             <div class="Section-Z1a">
                <div class="Section-Z1a1">
                   <div id="PageFooterTitle">
-                     <button id="PageFooterButtonZ1a1a"><span class="SpanFontWeight">PUMP UP THE VOLUME  </span>...for the best experience</button>
+                     <button id="PageFooterButtonZ1a1a"><span class="SpanFontWeight">Notes</span></button>
                   </div>
                </div>
 
@@ -3360,12 +3361,12 @@
                   <div id="DeveloperNotesContent">
                      <button id="PageFooterButtonZ1a2b"><span class="SpanFontWeight">Hardware:   </span>Dell "XPS 8950" desktop (Intel Core i9-12900K, 64GB RAM, 2TB NVMe, NVIDIA GeForce RTX 3080 Ti), Dell "U4021QW" 40" 4K ultrawide monitor.</button>
                      <button id="PageFooterButtonZ1a2c"><span class="SpanFontWeight">Software:   </span>Microsoft "Visual Studio Code" and "Edge"; "4K Video Downloader+", "CyberLink PowerDirector", "HandBrake", "Snagit", "Paint.NET", Microsoft "Windows 11 Pro".</button>
-                     <button id="PageFooterButtonZ1a2d"><span class="SpanFontWeight">Languages:   </span>HTML (HyperText Markup Language), CSS (Cascading Style Sheets), JS (JavaScript). Contains 4,000+ lines of code.</button>
+                     <button id="PageFooterButtonZ1a2d"><span class="SpanFontWeight">Languages:   </span>HTML (HyperText Markup Language), CSS (Cascading Style Sheets), JS (JavaScript). Contains 6,000+ lines of code.</button>
                      <button id="PageFooterButtonZ1a2e"><span class="SpanFontWeight">Video Player:   </span>Embeded Youtube iframe_api, with my custom video controls.</button>
-                     <button id="PageFooterButtonZ1a2f"><span class="SpanFontWeight">Server:   </span>Microsoft Internet Information Services (IIS), Microsoft GitHub, final Host TBD.</button>
+                     <button id="PageFooterButtonZ1a2f"><span class="SpanFontWeight">Web Server:   </span>Microsoft Internet Information Services (IIS), ClassicASP (Active Server Pages), Microsoft GitHub, GitHub REST API, Cloudflare Worker. Final Host TBD.</button>
                      <button id="PageFooterButtonZ1a2g"><span class="SpanFontWeight">AI:   </span>Microsoft Copilot (OpenAI ChatGPT), Google Gemini. Used for learning, reference, and debugging.</button>
-                     <button id="PageFooterButtonZ1a2h"><span class="SpanFontWeight">Design:   </span>I have strived to have an aesthetically unique and minimalist design, with emphasis on functionality and simplicity. Hence my unique/original web app user interface (UI) design language   © "FrameSoft UI".</button>
-                     <button id="PageFooterButtonZ1a2i"><span class="SpanFontWeight">Disclaimer:   </span>This Web App is built solely for coding technique learning and experimentation (hundreds of hours of coding effort).</button>
+                     <button id="PageFooterButtonZ1a2h"><span class="SpanFontWeight">Design:   </span>I have strived to have an aesthetically unique and minimalist design, with emphasis on functionality and simplicity. Hence my unique/original web app user interface (UI) design language  © "FrameSoft UI".</button>
+                     <button id="PageFooterButtonZ1a2i"><span class="SpanFontWeight">Disclaimer:   </span>This Web App is built solely for coding technique learning and experimentation, with hundreds of hours of analysis and coding effort.</button>
                   </div>
                </div>
 
@@ -3376,7 +3377,7 @@
                   </div>
 
                   <div id="CuratorNotesContent">
-                     <button id="PageFooterButtonZ1a3b"><span class="SpanFontWeight">Selection:   </span>I have hand-picked the song list (hundreds of hours of searching, listening, and viewing). Many of the tracks evoke decades of nostalgic memories. Contains 1,200+ music videos.</button>
+                     <button id="PageFooterButtonZ1a3b"><span class="SpanFontWeight">Selection:   </span>I have hand-picked the song list with hundreds of hours of searching, listening, and watching. Many of the tracks evoke decades of nostalgic memories. Contains 1,500+ music videos.</button>
                      <button id="PageFooterButtonZ1a3c"><span class="SpanFontWeight">Selection:   </span>Being a teenager in 1970's, my taste is hugely influenced by the music of that era. Classic Rock, Disco, Rhythem and Blues, Classic Pop, Jazz, etc. have clearly shapped my taste.</button>
                      <button id="PageFooterButtonZ1a3d"><span class="SpanFontWeight">Quality:   </span>I've strived (as much as possible) to feature videos with the best combination of sound and resolution available.</button>
                      <button id="PageFooterButtonZ1a3e"><span class="SpanFontWeight">Warning:   </span>Drawback of occasional commercials. My plan of hosting the video .mp4 files on the webserver was not feasible due to huge amount of disk space requiured. So, I opted to use embeded Youtube videos.</button>
@@ -3413,7 +3414,7 @@
                      <button id="PageFooterButtonZ1a4t">      - -ify (via -ification) → clarify → clarification,</button>
                      <button id="PageFooterButtonZ1a4u">      - -ize (via -ization) → modernize → modernization.</button>
                      <button id="PageFooterButtonZ1a4v">   e. You can coin many of them which is exactly the creative space I’ve been exploring.</button>
-                     <button id="PageFooterButtonZ1a4w">Note: Explanation courtesy of Microsoft Copilot (OpenAI ChatGPT).</button>
+                     <button id="PageFooterButtonZ1a4w">Note: My above explanation was best put into perfect writing by Microsoft Copilot (OpenAI ChatGPT).</button>
                   </div>
                </div>
 
@@ -3424,16 +3425,16 @@
                   </div>
 
                   <div id="OtherNotesContent">
-                     <button id="PageFooterButtonZ1a5b"><span class="SpanFontWeight">Warning:   </span>This Web App is designed to run on Microsoft Edge and Google Chrome computer browser (it will run mostly ok on Mozilla Firefox; it will definitely have issues on Apple Safari). Also, it isn't designed for Mobile devices. However, a tablet with full Edge or Chrome browser seems to be fine.</button>
-                     <button id="PageFooterButtonZ1a5c"><span class="SpanFontWeight">News:   </span>Releasse Version v1.0D: Added "Stop" button, next to the existing "Play" and "Pause" buttons.</button>
-                     <button id="PageFooterButtonZ1a5d"><span class="SpanFontWeight">News:   </span>Releasse Version v2.0D: Added picture preview on mouse hover for each music video in the main video viewer, and disabled native Youtube controls in the main video viewer (with the exception of commercial Skip button at the bottom right corner, when it appears).</button>
-                     <button id="PageFooterButtonZ1a5e"><span class="SpanFontWeight">News:   </span>Releasse Version v3.0D: Added set of "Zoom" level buttons in the top left corner, allowing resizing of my entire Web Application to fit various monitor sizes/resolutions.</button>
-                     <button id="PageFooterButtonZ1a5f"><span class="SpanFontWeight">News:   </span>Releasse Version v4.0D: Added small picture viewer for picture preview on mouse hover for each music video.</button>
-                     <button id="PageFooterButtonZ1a5g"><span class="SpanFontWeight">News:   </span>Releasse Version v5.0D: Added visitor "Posted Comments" section, allowing visitors to submit their feedback ("Name" and "Comment").</button>
-                     <button id="PageFooterButtonZ1a5h"><span class="SpanFontWeight">News:   </span>??????</button>
-                     <button id="PageFooterButtonZ1a5i"><span class="SpanFontWeight">News:   </span>??????</button>
+                     <button id="PageFooterButtonZ1a5b"><span class="SpanFontWeight">Warning:   </span>This Web App is designed to run on Microsoft Edge and Google Chrome computer browsers (it will run mostly ok on Mozilla Firefox and Apple Safari browsers). However, it isn't designed for Mobile devices, while tablets with full Edge or Chrome browser seems to be fine.</button>
+                     <button id="PageFooterButtonZ1a5c"><span class="SpanFontWeight">News:   </span>Releasse Version v1.0A to v9.0C: Too many changes to list.</button>
+                     <button id="PageFooterButtonZ1a5d"><span class="SpanFontWeight">News:   </span>Releasse Version v1.0D: Added a "Stop" button, next to the existing "Play" and "Pause" buttons.</button>
+                     <button id="PageFooterButtonZ1a5e"><span class="SpanFontWeight">News:   </span>Releasse Version v2.0D: Added a picture preview on mouse hover for each music video in the main video viewer, and disabled native Youtube controls in the main video viewer (with the exception of commercial Skip button at the bottom right corner, when it appears).</button>
+                     <button id="PageFooterButtonZ1a5f"><span class="SpanFontWeight">News:   </span>Releasse Version v3.0D: Added a set of "Zoom" level buttons in the top left corner, allowing resizing of my entire Web Application to fit various monitor sizes/resolutions.</button>
+                     <button id="PageFooterButtonZ1a5g"><span class="SpanFontWeight">News:   </span>Releasse Version v4.0D: Added a small picture viewer for picture preview on mouse hover for each music video.</button>
+                     <button id="PageFooterButtonZ1a5h"><span class="SpanFontWeight">News:   </span>Releasse Version v5.0D: Added a visitor "Posted Comments" section, allowing visitors to submit their feedback ("Name" and "Comment").</button>
+                     <button id="PageFooterButtonZ1a5i"><span class="SpanFontWeight">News:   </span>Releasse Version v6.0D: ??????</button>
                      <button id="PageFooterButtonZ1a5j"><span class="SpanFontWeight">News:   </span>??????</button>
-                     <button id="PageFooterButtonZ1a5k"><span class="SpanFontWeight">Contact:   </span>Feel free to shoot me an email if you like, for any reason:   <a href="mailto:janus0123@gmail.com"> janus0123@gmail.com </a></button>
+                     <button id="PageFooterButtonZ1a5k"><span class="SpanFontWeight">Contact:   </span>Feel free to shoot me an email, for any reason:  <a href="mailto:janus0123@gmail.com"> janus0123@gmail.com </a></button>
                   </div>
                </div>
 
@@ -3444,7 +3445,7 @@
                   </div>
 
                   <div id="ReleaseNotesContent">
-                     <button id="PageFooterButtonZ1a6b">Web Application Release Version:  v5.0D</button>
+                     <button id="PageFooterButtonZ1a6b">Web Application Release Version:  v6.0D</button>
                      <button id="PageFooterButtonZ1a6c">© Copywrite  2026  Levon's Favorite Music Videos.</button>
                      <button id="PageFooterButtonZ1a6d">All rights reserved.</button>
                   </div>
@@ -3516,18 +3517,20 @@
       // ****************************************************************************************************
       // ****************************************************************************************************
       // ****************************************************************************************************
-      // A. The "if" section:
-      //    The code is designed to use Classic ASP to save the Name and Comments entered by the user into a .csv file on the webserver.
+      // The "if" statement below in the document.addEventListener section:
+      //    The code is designed to use ClassicASP to save the Name and Comments entered by the user into a .csv file on the webserver.
       //    The .csv file is then read and displayed in the Posted Comments section of my web app.
       //    This code is designed to work with the Comment-Save.asp file, which handles the server-side processing of saving the comments.
-      //    It works perfectly on Microsoft IIS webserver with Classic ASP enabled on the local computer for private access to my web app.
-      //    It does not work on other webservers, Githumb code repository, or other web hosting platforms that do not support Classic ASP.
-      // B. The "else" section:
+      //    It works perfectly on Microsoft IIS webserver with ClassicASP enabled on the local computer for private access to my web app.
+      //    It does not work on other webservers, Github code repository, or other web hosting platforms that do not support ClassicASP.
+      // The "else if" statement below in the document.addEventListener section:
       //    The code is designed to use "GitHub REST API" to save the Name and Comments entered by the user into a .csv file on the Github code repository.
       //    The .csv file is then read and displayed in the Posted Comments section of my web app.
       //    This code is designed to work with a Cloudflare Worker.js (stored on Cloudflare).
       //    It handles securing the Github code repository settings and Github read/write Token securely (encripted) and isolated from the web app.
       //    It works perfectly on Github for public access to my web app. 
+      // The "else" statement below in the document.addEventListener section:
+      //    The code is designed to display a message in the Posted Comments section of my web app, indicating that the Name and Comments cannot be saved.
       // ****************************************************************************************************
       function isLocalClassicASPHost() {
          const  host =   window.location.hostname.toLowerCase();
@@ -3535,7 +3538,8 @@
       }
 
       document.addEventListener('DOMContentLoaded', () => {
-         if (isLocalClassicASPHost()) {   // The code in this "if" block is run if local IIS host with Classic ASP is detected.
+         // The code in this "if" block is run if "local IIS host with ClassicASP" is detected.
+         if (isLocalClassicASPHost()) {
             const Comments_CSV     = "Comments.csv";
             const Comment_Save_ASP = "Comment-Save.asp";
 
@@ -3690,7 +3694,169 @@
                return `<div>${escapeHtml(text)}</div>`;
             }
          } 
-         else {   // The code in this "else" block will be removed once the next "else" block is implemented (when GitHub REST API with Cloudflare Worker is detected).
+         // The code in this "else if" block is run if "GitHub REST API with Cloudflare Worker" is detected.
+         else if (window.location.hostname.includes("github.io") || window.location.hostname.includes("pages.dev")) {
+            const WORKER_URL = "https://github-comment-proxy.orman62.workers.dev";
+            const Comments_CSV = "Comments.csv";
+            const CommentSectionForm = document.getElementById('CommentSectionForm');
+            if (CommentSectionForm) {
+               CommentSectionForm.addEventListener('submit', saveComment);
+            }
+            loadComments();
+
+            function getCommentTimestamp() {
+               const now = new Date();
+               const yyyy = now.getFullYear();
+               const mm = String(now.getMonth() + 1).padStart(2, '0');
+               const dd = String(now.getDate()).padStart(2, '0');
+               const hh = String(now.getHours()).padStart(2, '0');
+               const mi = String(now.getMinutes()).padStart(2, '0');
+               const ss = String(now.getSeconds()).padStart(2, '0');
+               return `${yyyy}-${mm}-${dd}  ${hh}:${mi}:${ss}`;
+            }
+
+            function escapeHtml(value) {
+               return String(value ?? '')
+                  .replace(/&/g, '&amp;')
+                  .replace(/</g, '&lt;')
+                  .replace(/>/g, '&gt;')
+                  .replace(/"/g, '&quot;')
+                  .replace(/'/g, '&#39;');
+            }
+
+            function parseCsvLine(line) {
+               const fields = [];
+               let current = '';
+               let inQuotes = false;
+
+               for (let i = 0; i < line.length; i++) {
+                  const ch = line[i];
+                  if (ch === '"') {
+                     if (inQuotes && line[i + 1] === '"') {
+                        current += '"';
+                        i++;
+                     } 
+                     else {
+                        inQuotes = !inQuotes;
+                     }
+                  } 
+                  else 
+                     if (ch === ',' && !inQuotes) {
+                        fields.push(current);
+                        current = '';
+                     } 
+                     else {
+                        current += ch;
+                     }
+               }
+               fields.push(current);
+               return fields;
+            }
+
+            function saveComment(event) {
+               event.preventDefault();
+
+               const CommentSectionInputName = document.getElementById('CommentSectionInputName');
+               const CommentSectionInputText = document.getElementById('CommentSectionInputText');
+               const CommentSectionSubmitMessage = document.getElementById('CommentSectionSubmitMessage');
+
+               if (!CommentSectionInputName || !CommentSectionInputText || !CommentSectionSubmitMessage) return;
+
+               const CommentInputName = CommentSectionInputName.value.trim();
+               const CommentInputText = CommentSectionInputText.value.trim();
+
+               if (!CommentInputName || !CommentInputText) {
+                  CommentSectionSubmitMessage.textContent = 'Message:  Enter both your Name and your Comments before clicking Submit.';
+                  return;
+               }
+
+               const timestamp = getCommentTimestamp();
+               CommentSectionSubmitMessage.textContent = 'Message:  Saving Name and Comments...';
+
+               fetch(WORKER_URL, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                     name: CommentInputName,
+                     text: CommentInputText,
+                     timestamp: timestamp
+                  })
+               })
+               .then(response => response.json())
+               .then(result => {
+                  if (result.success) {
+                     CommentSectionInputName.value = '';
+                     CommentSectionInputText.value = '';
+                     
+                  // Give GitHub Pages a few seconds to process the commit before refreshing
+                     CommentSectionSubmitMessage.textContent = 'Message:  Name and Comments saved. Updating list...';
+                     setTimeout(() => {
+                        loadComments().then(() => {
+                           CommentSectionSubmitMessage.textContent = 'Message:  Name and Comments saved.';
+                        });
+                     }, 3000);
+                  } 
+                  else {
+                     CommentSectionSubmitMessage.textContent = result.error || 'Message:  Name and Comments NOT saved.';
+                  }
+               })
+               .catch((err) => {
+                  console.error(err);
+                  CommentSectionSubmitMessage.textContent = 'Message:  Name and Comments NOT saved. Check network connection or Cloudflare Worker setup.';
+               });
+            }
+
+            function loadComments() {
+               const CommentSectionPostedText = document.getElementById('CommentSectionPostedText');
+               if (!CommentSectionPostedText) return Promise.resolve();
+
+               return fetch(`${Comments_CSV}?_=${Date.now()}`, { cache: 'no-store' })
+               .then(response => {
+                  if (!response.ok) throw new Error('Message:  Comments.csv file not found.');
+                  return response.text();
+               })
+               .then(text => {
+                  const rows = text.trim().split(/\r?\n/).filter(line => line.trim());
+                  if (!rows.length) {
+                     CommentSectionPostedText.innerHTML = '<div style="padding: 6px; border-bottom: 2px dashed; opacity:0.75;">Message:  Comments not entered yet.</div>';
+                     return;
+                  }
+
+                  CommentSectionPostedText.innerHTML = rows.map(formatCommentLine).join('');
+               })
+               .catch(() => {
+                  CommentSectionPostedText.innerHTML = '<div style="padding: 6px; border-bottom: 2px dashed; opacity:0.75;">Message:  Comments not entered yet.</div>';
+               });
+            }
+
+            function formatCommentLine(line) {
+               if (!line || !line.trim()) return '';
+
+               const trimmed = line.trim();
+               const fields = parseCsvLine(trimmed);
+
+               if (fields.length >= 3) {
+                  const cleanField = (f) => f.trim().replace(/^"|"$/g, '').replace(/""/g, '"');
+
+                  const name      = cleanField(fields[0]);
+                  const comment   = cleanField(fields[1]);
+                  const timestamp = cleanField(fields[2]);
+
+                  return `<div style="padding: 6px; border-bottom: 2px dashed; opacity:0.75;">` +
+                        `<div><strong>Name:  </strong>${escapeHtml(name || 'Unknown')}</div>` +
+                        `<div><strong>Comment:  </strong>${escapeHtml(comment || '')}</div>` +
+                        `<div><strong>Date/Time:  </strong>${escapeHtml(timestamp || '')}</div>` +
+                        `</div>`;
+               }
+
+               const match = trimmed.match(/^"(.*)"$/);
+               const text = match ? match[1].replace(/""/g, '"') : trimmed;
+
+               return `<div>${escapeHtml(text)}</div>`;
+            }
+         }
+         // The code in this "else" block is run if neither "local IIS host with ClassicASP" is detected nor "GitHub REST API with Cloudflare Worker" is detected.
+         else {
             const CommentSectionForm = document.getElementById('CommentSectionForm');
             if (CommentSectionForm) {
                CommentSectionForm.addEventListener('submit', saveCommentError);
@@ -3705,349 +3871,173 @@
                CommentSectionPostedText.innerHTML = 'This new feature is not yet fully functional.';
             }
          }
-         // else {   // The code in this "else" block is run if GitHub REST API with Cloudflare Worker is detected.
-            // ****************************************************************************************************
-            // Create the Free Cloudflare Worker (Server Proxy)
-            //    1. Go to Cloudflare.com and create a free account.
-            //    2. In the dashboard, navigate to Workers & Pages > Create Application > Create Worker.
-            //    3. Name it (e.g., Comment-Proxy.js) and click Deploy.
-            //    4. Click Edit Code and paste the Worker script.
-            //    5. Name the Cloudflare Worker Script Comment-Proxy.js)
-            //    6. Click Save and Deploy.
-            //    7. Go back to your Worker's main page, click Settings > Variables and Secrets, and add the following Environment Variables:
-            //       GITHUB_TOKEN:     ???
-            //          (click "Encrypt" so it stays secret! and do not use quotes or double quotes)
-            //       GITHUB_OWNER:     "orman6200"
-            //       GITHUB_REPO:      "LevonsFavoriteMusicVideos"
-            //       GITHUB_FILE_PATH: "LevonsFavoriteMusicVideos/Comments.csv"
-            //       GITHUB_BRANCH:    "main"
-            //    8. Copy your Worker's public URL (it will look like [https://comment-proxy.yourname.workers.dev](https://comment-proxy.yourname.workers.dev)).
-            // ****************************************************************************************************
-
-            // A. Set Up Your Cloudflare Worker:
-            //    Follow these steps to deploy the Worker script that will write to your repository:
-            //    1. Log into your Cloudflare Dashboard.
-            //    2. In the left sidebar, navigate to Workers & Pages >>> Overview.
-            //    3. Click Create Application >>> Create Worker.
-            //    4. Name your Worker (e.g., github-comment-proxy) and click Deploy.
-            //    5. On the success screen, click Edit Code.
-            //    6. Replace all existing code in the editor with the following worker JavaScript:
-            // export default {
-            //    async fetch(request, env) {
-            //       // Handle CORS Preflight request
-            //       if (request.method === "OPTIONS") {
-            //          return new Response(null, {
-            //             headers: {
-            //                "Access-Control-Allow-Origin": "*",
-            //                "Access-Control-Allow-Methods": "POST, OPTIONS",
-            //                "Access-Control-Allow-Headers": "Content-Type"
-            //             }
-            //          });
-            //       }
-
-            //       if (request.method !== "POST") {
-            //          return new Response(JSON.stringify({ success: false, error: "Method not allowed" }), {
-            //             status: 405,
-            //             headers: { "Content-Type": "application/json" }
-            //          });
-            //       }
-
-            //       try {
-            //          const data = await request.json();
-            //          const { name, text, timestamp } = data;
-
-            //          if (!name || !text) {
-            //             return new Response(JSON.stringify({ success: false, error: "Name and Comment are required." }), {
-            //                status: 400,
-            //                headers: { "Content-Type": "application/json" }
-            //             });
-            //          }
-
-            //          // Format CSV line escaping quotes
-            //          const csvEscape = (val) => String(val || "").replace(/"/g, '""');
-            //          const newCsvLine = `"${csvEscape(name)}","${csvEscape(text)}","${csvEscape(timestamp)}"`;
-
-            //          // GitHub API parameters from Environment Variables
-            //          const repoOwner = env.GITHUB_OWNER;
-            //          const repoName  = env.GITHUB_REPO;
-            //          const filePath  = env.FILE_PATH || "Comments.csv";
-            //          const branch    = env.GITHUB_BRANCH || "main";
-            //          const token     = env.GITHUB_TOKEN;
-
-            //          const githubApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}?ref=${branch}`;
-
-            //          // 1. Fetch current file details from GitHub
-            //          const getFileResponse = await fetch(githubApiUrl, {
-            //             headers: {
-            //                "Authorization": `Bearer ${token}`,
-            //                "User-Agent": "Cloudflare-Worker-Comments",
-            //                "Accept": "application/vnd.github.v3+json"
-            //             }
-            //          });
-
-            //          let sha = "";
-            //          let existingContent = "";
-
-            //          if (getFileResponse.status === 200) {
-            //             const fileData = await getFileResponse.json();
-            //             sha = fileData.sha;
-            //             // Decode base64 UTF-8 string
-            //             const binaryStr = atob(fileData.content.replace(/\s/g, ''));
-            //             const bytes = Uint8Array.from(binaryStr, char => char.charCodeAt(0));
-            //             existingContent = new TextDecoder().decode(bytes);
-            //          } 
-            //          else if (getFileResponse.status !== 404) {
-            //             const errText = await getFileResponse.text();
-            //             return new Response(JSON.stringify({ success: false, error: `GitHub API error: ${errText}` }), {
-            //                status: 500,
-            //                headers: { "Content-Type": "application/json" }
-            //             });
-            //          }
-
-            //          // Prepend new line to top of file
-            //          if (existingContent && !existingContent.endsWith("\n")) {
-            //             existingContent = "\n" + existingContent;
-            //          }
-            //          const updatedContent = **newCsvLine + "\n" + existingContent**;
-
-            //          // Encode UTF-8 string to base64
-            //          const utf8Bytes = new TextEncoder().encode(updatedContent);
-            //          let binaryStr = "";
-            //          utf8Bytes.forEach(b => binaryStr += String.fromCharCode(b));
-            //          const base64Content = btoa(binaryStr);
-
-            //          // 2. Commit updated file back to GitHub
-            //          const putResponse = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
-            //             method: "PUT",
-            //             headers: {
-            //                "Authorization": `Bearer ${token}`,
-            //                "User-Agent": "Cloudflare-Worker-Comments",
-            //                "Accept": "application/vnd.github.v3+json",
-            //                "Content-Type": "application/json"
-            //             },
-            //             body: JSON.stringify({
-            //                message: `Add comment from ${name}`,
-            //                content: base64Content,
-            //                sha: sha || undefined,
-            //                branch: branch
-            //             })
-            //          });
-
-            //          if (putResponse.ok) {
-            //             return new Response(JSON.stringify({ success: true }), {
-            //                headers: {
-            //                   "Content-Type": "application/json",
-            //                   "Access-Control-Allow-Origin": "*"
-            //                }
-            //             });
-            //          } 
-            //          else {
-            //             const errData = await putResponse.json();
-            //             return new Response(JSON.stringify({ success: false, error: errData.message || "Failed to commit comment." }), {
-            //                status: 500,
-            //                headers: {
-            //                   "Content-Type": "application/json",
-            //                   "Access-Control-Allow-Origin": "*"
-            //                }
-            //             });
-            //          }
-            //       } catch (err) {
-            //          return new Response(JSON.stringify({ success: false, error: err.message }), {
-            //             status: 500,
-            //             headers: {
-            //                "Content-Type": "application/json",
-            //                "Access-Control-Allow-Origin": "*"
-            //             }
-            //          });
-            //       }
-            //    }
-            // };
-
-            // 7. Click Save and Deploy.
-            // 8. Go back to your Worker settings by clicking Settings >>> Variables.
-            // 9. Under Environment Variables, click Add to add the following variables:
-            //    a. GITHUB_TOKEN: Your Personal Access Token (mark as Secret)
-            //    b. GITHUB_OWNER: Your GitHub username or organization name
-            //    c. GITHUB_REPO: Your repository name
-            //    d. GITHUB_BRANCH: main (or gh-pages depending on your setup)
-            //    e. FILE_PATH: Comments.csv
-            // 10. Save and deploy again. Note down your Worker URL (e.g., [https://github-comment-proxy.your-subdomain.workers.dev](https://github-comment-proxy.your-subdomain.workers.dev) ).
-            // B. JavaScript Code for the "else" Branch:
-            // 1. Paste the following snippet into the else block of your addEventListener script. Be sure to update the WORKER_URL variable with your actual Cloudflare Worker URL.
-
-            // UPDATE THIS URL to point to your Cloudflare Worker URL
-            // const WORKER_URL = "https://github-comment-proxy.your-subdomain.workers.dev";
-            // const Comments_CSV = "Comments.csv";
-
-            // const CommentSectionForm = document.getElementById('CommentSectionForm');
-            // if (CommentSectionForm) {
-            //    CommentSectionForm.addEventListener('submit', saveComment);
-            // }
-            // loadComments();
-
-            // function getCommentTimestamp() {
-            //    const now = new Date();
-            //    const yyyy = now.getFullYear();
-            //    const mm = String(now.getMonth() + 1).padStart(2, '0');
-            //    const dd = String(now.getDate()).padStart(2, '0');
-            //    const hh = String(now.getHours()).padStart(2, '0');
-            //    const mi = String(now.getMinutes()).padStart(2, '0');
-            //    const ss = String(now.getSeconds()).padStart(2, '0');
-            //    return `${yyyy}-${mm}-${dd}  ${hh}:${mi}:${ss}`;
-            // }
-
-            // function escapeHtml(value) {
-            //    return String(value ?? '')
-            //       .replace(/&/g, '&amp;')
-            //       .replace(/</g, '&lt;')
-            //       .replace(/>/g, '&gt;')
-            //       .replace(/"/g, '&quot;')
-            //       .replace(/'/g, '&#39;');
-            // }
-
-            // function parseCsvLine(line) {
-            //    const fields = [];
-            //    let current = '';
-            //    let inQuotes = false;
-
-            //    for (let i = 0; i < line.length; i++) {
-            //       const ch = line[i];
-            //       if (ch === '"') {
-            //          if (inQuotes && line[i + 1] === '"') {
-            //             current += '"';
-            //             i++;
-            //          } 
-            //          else {
-            //             inQuotes = !inQuotes;
-            //          }
-            //       } 
-            //       else 
-            //          if (ch === ',' && !inQuotes) {
-            //             fields.push(current);
-            //             current = '';
-            //          } 
-            //          else {
-            //             current += ch;
-            //          }
-            //    }
-            //    fields.push(current);
-            //    return fields;
-            // }
-
-            // function saveComment(event) {
-            //    event.preventDefault();
-
-            //    const CommentSectionInputName = document.getElementById('CommentSectionInputName');
-            //    const CommentSectionInputText = document.getElementById('CommentSectionInputText');
-            //    const CommentSectionSubmitMessage = document.getElementById('CommentSectionSubmitMessage');
-
-            //    if (!CommentSectionInputName || !CommentSectionInputText || !CommentSectionSubmitMessage) return;
-
-            //    const CommentInputName = CommentSectionInputName.value.trim();
-            //    const CommentInputText = CommentSectionInputText.value.trim();
-
-            //    if (!CommentInputName || !CommentInputText) {
-            //       CommentSectionSubmitMessage.textContent = 'Message:  Enter both your Name and your Comments before clicking Submit.';
-            //       return;
-            //    }
-
-            //    const timestamp = getCommentTimestamp();
-            //    CommentSectionSubmitMessage.textContent = 'Message:  Saving Name and Comments...';
-
-            //    fetch(WORKER_URL, {
-            //       method: 'POST',
-            //       headers: { 'Content-Type': 'application/json' },
-            //       body: JSON.stringify({
-            //          name: CommentInputName,
-            //          text: CommentInputText,
-            //          timestamp: timestamp
-            //       })
-            //    })
-            //    .then(response => response.json())
-            //    .then(result => {
-            //       if (result.success) {
-            //          CommentSectionInputName.value = '';
-            //          CommentSectionInputText.value = '';
-                     
-                     // Give GitHub Pages a few seconds to process the commit before refreshing
-            //          CommentSectionSubmitMessage.textContent = 'Message:  Name and Comments saved. Updating list...';
-            //          setTimeout(() => {
-            //             loadComments().then(() => {
-            //                CommentSectionSubmitMessage.textContent = 'Message:  Name and Comments saved.';
-            //             });
-            //          }, 3000);
-            //       } 
-            //       else {
-            //          CommentSectionSubmitMessage.textContent = result.error || 'Message:  Name and Comments NOT saved.';
-            //       }
-            //    })
-            //    .catch((err) => {
-            //       console.error(err);
-            //       CommentSectionSubmitMessage.textContent = 'Message:  Name and Comments NOT saved. Check network connection or Cloudflare Worker setup.';
-            //    });
-            // }
-
-            // function loadComments() {
-            //    const CommentSectionPostedText = document.getElementById('CommentSectionPostedText');
-            //    if (!CommentSectionPostedText) return Promise.resolve();
-
-            //    return fetch(`${Comments_CSV}?_=${Date.now()}`, { cache: 'no-store' })
-            //    .then(response => {
-            //       if (!response.ok) throw new Error('Message:  Comments.csv file not found.');
-            //       return response.text();
-            //    })
-            //    .then(text => {
-            //       const rows = text.trim().split(/\r?\n/).filter(line => line.trim());
-            //       if (!rows.length) {
-            //          CommentSectionPostedText.innerHTML = '<div style="padding: 6px; border-bottom: 2px dashed; opacity:0.75;">Message:  Comments not entered yet.</div>';
-            //          return;
-            //       }
-
-            //       CommentSectionPostedText.innerHTML = rows.map(formatCommentLine).join('');
-            //    })
-            //    .catch(() => {
-            //       CommentSectionPostedText.innerHTML = '<div style="padding: 6px; border-bottom: 2px dashed; opacity:0.75;">Message:  Comments not entered yet.</div>';
-            //    });
-            // }
-
-            // function formatCommentLine(line) {
-            //    if (!line || !line.trim()) return '';
-
-            //    const trimmed = line.trim();
-            //    const fields = parseCsvLine(trimmed);
-
-            //    if (fields.length >= 3) {
-            //       const cleanField = (f) => f.trim().replace(/^"|"$/g, '').replace(/""/g, '"');
-
-            //       const name      = cleanField(fields[0]);
-            //       const comment   = cleanField(fields[1]);
-            //       const timestamp = cleanField(fields[2]);
-
-            //       return `<div style="padding: 6px; border-bottom: 2px dashed; opacity:0.75;">` +
-            //             `<div><strong>Name:  </strong>${escapeHtml(name || 'Unknown')}</div>` +
-            //             `<div><strong>Comment:  </strong>${escapeHtml(comment || '')}</div>` +
-            //             `<div><strong>Date/Time:  </strong>${escapeHtml(timestamp || '')}</div>` +
-            //             `</div>`;
-            //    }
-
-            //    const match = trimmed.match(/^"(.*)"$/);
-            //    const text = match ? match[1].replace(/""/g, '"') : trimmed;
-
-            //    return `<div>${escapeHtml(text)}</div>`;
-            // }
-
-            // Note on GitHub Pages latency: 
-            // When a user posts a comment, GitHub API commits directly to your Git repository. 
-            // It usually takes 1 to 5 seconds for GitHub Pages to rebuild and serve the newly updated Comments.csv file. 
-            // The 3-second delay included in the setTimeout helps ensure the updated file is pulled when loadComments() is re-invoked.
-
-            // Secure Comment Submission System via Cloudflare Worker Proxy
-            //    Notice there are no tokens, passwords, or secrets here, only the public Worker URL.
-            //    1. No Token Exposure:  The token only lives inside Cloudflare's server environment. Even if someone inspects the HTTP network requests inDevTools, they will only see a POST request to your worker URL with {"name": "...", "text": "..."}.
-            //    2. GitHub Friendly:    GitHub secret scanners will never detect or revoke your token because it stays off Git repositories completely.
-            //    3. Generous Free Tier: Cloudflare Workers gives you 100,000 free requests per day, which is more than enough for a personal site orcomment system.
-         // }
       });
+
+// **************************************************
+// A. Set Up Your Cloudflare Worker (free Cloudflare Worker Server Proxy):
+//    Follow these steps to deploy the Worker script that will write to your repository:
+//    Go to Cloudflare.com and create a free account.
+//    1. Log into your Cloudflare Dashboard.
+//    2. In the left sidebar, navigate to Workers & Pages >>> Overview (In the dashboard, navigate to Workers & Pages > Create Application > Create Worker).
+//       In the left sidebar, navigate to Build >>> Compute >>> Workers & Pages then click the button "Create application" then click the button "Start with Hello World".
+//    3. Click Create Application >>> Create Worker.
+//       Login to your GitHub account and authorize Cloudflare to access your repositories. Then click the button "Continue with GitHub".
+//       Select the repository "orman6200" and "LevonsStudio" then click the button "Next -->".
+//    4. Name your Worker (e.g., github-comment-proxy.js) and click Deploy.
+//    5. On the success screen, click Edit Code.
+//    6. Replace all existing code in the editor with the below worker JavaScript:
+//    7. Click Save and Deploy.
+//    8. Go back to your Worker settings by clicking Settings >>> Variables (Go back to your Worker's main page, click Settings > Variables and Secrets, and add the following Environment Variables).
+//    9. Under Environment Variables, click Add to add the following variables:
+//       a. GITHUB_TOKEN:       ???                                        My Personal Access Token (click "Encrypt" so it stays secret! and do not use quotes or double quotes)
+//       b. GITHUB_OWNER:       "orman6200"                                My GitHub username or organization name
+//       c. GITHUB_REPO:        "LevonsFavoriteMusicVideos"                My repository name
+//       e. GITHUB_FILE_PATH:   "LevonsFavoriteMusicVideos/Comments.csv"   My location of the Comments.csv file in my repository (or just "Comments.csv" if it's in the root of my repository)
+//       d. GITHUB_BRANCH:      "main"                                     (or gh-pages depending on my setup)
+//    10. Save and deploy again. 
+//    11. Copy and paste your Worker's public URL to the "else if" section of your addEventListener script to point to your Cloudflare Worker URL ("https://github-comment-proxy.your-subdomain.workers.dev".
+// B. Note on GitHub Pages latency: 
+//    1. When a user posts a comment, GitHub API commits directly to your Git repository. 
+//    2. It usually takes 1 to 5 seconds for GitHub Pages to rebuild and serve the newly updated Comments.csv file. 
+//    3. The 3-second delay included in the setTimeout helps ensure the updated file is pulled when loadComments() is re-invoked.
+// C. Secure Comment Submission System via Cloudflare Worker Proxy:
+//    1. Notice there are no tokens, passwords, or secrets here, only the public Worker URL.
+//    2. No Token Exposure:  The token only lives inside Cloudflare's server environment. Even if someone inspects the HTTP network requests inDevTools, they will only see a POST request to your worker URL with {"name": "...", "text": "..."}.
+//    3. GitHub Friendly:    GitHub secret scanners will never detect or revoke your token because it stays off Git repositories completely.
+//    4. Generous Free Tier: Cloudflare Workers gives you 100,000 free requests per day, which is more than enough for a personal site orcomment system.
+// **************************************************
+// export default {
+//    async fetch(request, env) {
+//       // Handle CORS Preflight request
+//       if (request.method === "OPTIONS") {
+//          return new Response(null, {
+//             headers: {
+//                "Access-Control-Allow-Origin": "*",
+//                "Access-Control-Allow-Methods": "POST, OPTIONS",
+//                "Access-Control-Allow-Headers": "Content-Type"
+//             }
+//          });
+//       }
+
+//       if (request.method !== "POST") {
+//          return new Response(JSON.stringify({ success: false, error: "Method not allowed" }), {
+//             status: 405,
+//             headers: { "Content-Type": "application/json" }
+//          });
+//       }
+
+//       try {
+//          const data = await request.json();
+//          const { name, text, timestamp } = data;
+
+//          if (!name || !text) {
+//             return new Response(JSON.stringify({ success: false, error: "Name and Comment are required." }), {
+//                status: 400,
+//                headers: { "Content-Type": "application/json" }
+//             });
+//          }
+
+//          // Format CSV line escaping quotes
+//          const csvEscape = (val) => String(val || "").replace(/"/g, '""');
+//          const newCsvLine = `"${csvEscape(name)}","${csvEscape(text)}","${csvEscape(timestamp)}"`;
+
+//          // GitHub API parameters from Environment Variables
+//          const repoOwner = env.GITHUB_OWNER;
+//          const repoName  = env.GITHUB_REPO;
+//          const filePath  = env.FILE_PATH || "Comments.csv";
+//          const branch    = env.GITHUB_BRANCH || "main";
+//          const token     = env.GITHUB_TOKEN;
+
+//          const githubApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}?ref=${branch}`;
+
+//          // 1. Fetch current file details from GitHub
+//          const getFileResponse = await fetch(githubApiUrl, {
+//             headers: {
+//                "Authorization": `Bearer ${token}`,
+//                "User-Agent": "Cloudflare-Worker-Comments",
+//                "Accept": "application/vnd.github.v3+json"
+//             }
+//          });
+
+//          let sha = "";
+//          let existingContent = "";
+
+//          if (getFileResponse.status === 200) {
+//             const fileData = await getFileResponse.json();
+//             sha = fileData.sha;
+//             // Decode base64 UTF-8 string
+//             const binaryStr = atob(fileData.content.replace(/\s/g, ''));
+//             const bytes = Uint8Array.from(binaryStr, char => char.charCodeAt(0));
+//             existingContent = new TextDecoder().decode(bytes);
+//          } 
+//          else if (getFileResponse.status !== 404) {
+//             const errText = await getFileResponse.text();
+//             return new Response(JSON.stringify({ success: false, error: `GitHub API error: ${errText}` }), {
+//                status: 500,
+//                headers: { "Content-Type": "application/json" }
+//             });
+//          }
+
+//          // Prepend new line to top of file
+//          if (existingContent && !existingContent.endsWith("\n")) {
+//             existingContent = "\n" + existingContent;
+//          }
+//          const updatedContent = newCsvLine + "\n" + existingContent;
+
+//          // Encode UTF-8 string to base64
+//          const utf8Bytes = new TextEncoder().encode(updatedContent);
+//          let binaryStr = "";
+//          utf8Bytes.forEach(b => binaryStr += String.fromCharCode(b));
+//          const base64Content = btoa(binaryStr);
+
+//          // 2. Commit updated file back to GitHub
+//          const putResponse = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
+//             method: "PUT",
+//             headers: {
+//                "Authorization": `Bearer ${token}`,
+//                "User-Agent": "Cloudflare-Worker-Comments",
+//                "Accept": "application/vnd.github.v3+json",
+//                "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify({
+//                message: `Add comment from ${name}`,
+//                content: base64Content,
+//                sha: sha || undefined,
+//                branch: branch
+//             })
+//          });
+
+//          if (putResponse.ok) {
+//             return new Response(JSON.stringify({ success: true }), {
+//                headers: {
+//                   "Content-Type": "application/json",
+//                   "Access-Control-Allow-Origin": "*"
+//                }
+//             });
+//          } 
+//          else {
+//             const errData = await putResponse.json();
+//             return new Response(JSON.stringify({ success: false, error: errData.message || "Failed to commit comment." }), {
+//                status: 500,
+//                headers: {
+//                   "Content-Type": "application/json",
+//                   "Access-Control-Allow-Origin": "*"
+//                }
+//             });
+//          }
+//       } catch (err) {
+//          return new Response(JSON.stringify({ success: false, error: err.message }), {
+//             status: 500,
+//             headers: {
+//                "Content-Type": "application/json",
+//                "Access-Control-Allow-Origin": "*"
+//             }
+//          });
+//       }
+//    }
+// };
+// **************************************************
+
       // ****************************************************************************************************
       // ****************************************************************************************************
       // ****************************************************************************************************
