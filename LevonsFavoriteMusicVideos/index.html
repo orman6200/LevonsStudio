@@ -3892,9 +3892,11 @@
          //    }
          // }
 //         else if (window.location.hostname.includes("github.io") || window.location.hostname.includes("pages.dev")) {
-         else if (window.location.hostname.includes("github.io") || window.location.hostname.includes("pages.dev") || 
-                  window.location.hostname.includes("localhost") || window.location.hostname === "127.0.0.1" ||
-                  window.location.hostname.includes("https://www.levon-studio.com")) {
+         else if (window.location.hostname.includes("github.io") || 
+                  window.location.hostname.includes("pages.dev") || 
+                  window.location.hostname.includes("localhost") || 
+                  window.location.hostname === "127.0.0.1" ||
+                  window.location.hostname === "www.levon-studio.com") {
 
             const WORKER_URL = "https://github-comment-proxy.orman62.workers.dev";
             const Comments_CSV = "Comments.csv";
