@@ -3538,7 +3538,9 @@
       }
 
       document.addEventListener('DOMContentLoaded', () => {
+         // **************************************************
          // The code in this "if" block is run if "local IIS host with ClassicASP" is detected.
+         // **************************************************
          if (isLocalClassicASPHost()) {
             const Comments_CSV     = "Comments.csv";
             const Comment_Save_ASP = "Comment-Save.asp";
@@ -3694,7 +3696,41 @@
                return `<div>${escapeHtml(text)}</div>`;
             }
          } 
+         // **************************************************
+         // A. Set Up Your Cloudflare Worker (free Cloudflare Worker Server Proxy):
+         //    Follow these steps to deploy the Worker script that will write to your repository:
+         //    Go to Cloudflare.com and create a free account.
+         //    1. Log into your Cloudflare Dashboard.
+         //    2. In the left sidebar, navigate to Workers & Pages >>> Overview (In the dashboard, navigate to Workers & Pages > Create Application > Create Worker).
+         //       In the left sidebar, navigate to Build >>> Compute >>> Workers & Pages then click the button "Create application" then click the button "Start with Hello World".
+         //    3. Click Create Application >>> Create Worker.
+         //       Login to your GitHub account and authorize Cloudflare to access your repositories. Then click the button "Continue with GitHub".
+         //       Select the repository "orman6200" and "LevonsStudio" then click the button "Next -->".
+         //    4. Name your Worker (e.g., github-comment-proxy.js) and click Deploy.
+         //    5. On the success screen, click Edit Code.
+         //    6. Replace all existing code in the editor with the below worker JavaScript:
+         //    7. Click Save and Deploy.
+         //    8. Go back to your Worker settings by clicking Settings >>> Variables (Go back to your Worker's main page, click Settings > Variables and Secrets, and add the following Environment Variables).
+         //    9. Under Environment Variables, click Add to add the following variables:
+         //       a. GITHUB_TOKEN:       ???                                        My Personal Access Token (click "Encrypt" so it stays secret! and do not use quotes or double quotes)
+         //       b. GITHUB_OWNER:       "orman6200"                                My GitHub username or organization name
+         //       c. GITHUB_REPO:        "LevonsFavoriteMusicVideos"                My repository name
+         //       e. GITHUB_FILE_PATH:   "LevonsFavoriteMusicVideos/Comments.csv"   My location of the Comments.csv file in my repository (or just "Comments.csv" if it's in the root of my repository)
+         //       d. GITHUB_BRANCH:      "main"                                     (or gh-pages depending on my setup)
+         //    10. Save and deploy again. 
+         //    11. Copy and paste your Worker's public URL to the "else if" section of your addEventListener script to point to your Cloudflare Worker URL ("https://github-comment-proxy.your-subdomain.workers.dev".
+         // B. Note on GitHub Pages latency: 
+         //    1. When a user posts a comment, GitHub API commits directly to your Git repository. 
+         //    2. It usually takes 1 to 5 seconds for GitHub Pages to rebuild and serve the newly updated Comments.csv file. 
+         //    3. The 3-second delay included in the setTimeout helps ensure the updated file is pulled when loadComments() is re-invoked.
+         // C. Secure Comment Submission System via Cloudflare Worker Proxy:
+         //    1. Notice there are no tokens, passwords, or secrets here, only the public Worker URL.
+         //    2. No Token Exposure:  The token only lives inside Cloudflare's server environment. Even if someone inspects the HTTP network requests inDevTools, they will only see a POST request to your worker URL with {"name": "...", "text": "..."}.
+         //    3. GitHub Friendly:    GitHub secret scanners will never detect or revoke your token because it stays off Git repositories completely.
+         //    4. Generous Free Tier: Cloudflare Workers gives you 100,000 free requests per day, which is more than enough for a personal site orcomment system.
+          // **************************************************
          // The code in this "else if" block is run if "GitHub REST API with Cloudflare Worker" is detected.
+         // **************************************************
          else if (window.location.hostname.includes("github.io") || window.location.hostname.includes("pages.dev")) {
             const WORKER_URL = "https://github-comment-proxy.orman62.workers.dev";
             const Comments_CSV = "Comments.csv";
@@ -3855,7 +3891,9 @@
                return `<div>${escapeHtml(text)}</div>`;
             }
          }
+         // **************************************************
          // The code in this "else" block is run if neither "local IIS host with ClassicASP" is detected nor "GitHub REST API with Cloudflare Worker" is detected.
+         // **************************************************
          else {
             const CommentSectionForm = document.getElementById('CommentSectionForm');
             if (CommentSectionForm) {
@@ -3872,172 +3910,6 @@
             }
          }
       });
-
-// **************************************************
-// A. Set Up Your Cloudflare Worker (free Cloudflare Worker Server Proxy):
-//    Follow these steps to deploy the Worker script that will write to your repository:
-//    Go to Cloudflare.com and create a free account.
-//    1. Log into your Cloudflare Dashboard.
-//    2. In the left sidebar, navigate to Workers & Pages >>> Overview (In the dashboard, navigate to Workers & Pages > Create Application > Create Worker).
-//       In the left sidebar, navigate to Build >>> Compute >>> Workers & Pages then click the button "Create application" then click the button "Start with Hello World".
-//    3. Click Create Application >>> Create Worker.
-//       Login to your GitHub account and authorize Cloudflare to access your repositories. Then click the button "Continue with GitHub".
-//       Select the repository "orman6200" and "LevonsStudio" then click the button "Next -->".
-//    4. Name your Worker (e.g., github-comment-proxy.js) and click Deploy.
-//    5. On the success screen, click Edit Code.
-//    6. Replace all existing code in the editor with the below worker JavaScript:
-//    7. Click Save and Deploy.
-//    8. Go back to your Worker settings by clicking Settings >>> Variables (Go back to your Worker's main page, click Settings > Variables and Secrets, and add the following Environment Variables).
-//    9. Under Environment Variables, click Add to add the following variables:
-//       a. GITHUB_TOKEN:       ???                                        My Personal Access Token (click "Encrypt" so it stays secret! and do not use quotes or double quotes)
-//       b. GITHUB_OWNER:       "orman6200"                                My GitHub username or organization name
-//       c. GITHUB_REPO:        "LevonsFavoriteMusicVideos"                My repository name
-//       e. GITHUB_FILE_PATH:   "LevonsFavoriteMusicVideos/Comments.csv"   My location of the Comments.csv file in my repository (or just "Comments.csv" if it's in the root of my repository)
-//       d. GITHUB_BRANCH:      "main"                                     (or gh-pages depending on my setup)
-//    10. Save and deploy again. 
-//    11. Copy and paste your Worker's public URL to the "else if" section of your addEventListener script to point to your Cloudflare Worker URL ("https://github-comment-proxy.your-subdomain.workers.dev".
-// B. Note on GitHub Pages latency: 
-//    1. When a user posts a comment, GitHub API commits directly to your Git repository. 
-//    2. It usually takes 1 to 5 seconds for GitHub Pages to rebuild and serve the newly updated Comments.csv file. 
-//    3. The 3-second delay included in the setTimeout helps ensure the updated file is pulled when loadComments() is re-invoked.
-// C. Secure Comment Submission System via Cloudflare Worker Proxy:
-//    1. Notice there are no tokens, passwords, or secrets here, only the public Worker URL.
-//    2. No Token Exposure:  The token only lives inside Cloudflare's server environment. Even if someone inspects the HTTP network requests inDevTools, they will only see a POST request to your worker URL with {"name": "...", "text": "..."}.
-//    3. GitHub Friendly:    GitHub secret scanners will never detect or revoke your token because it stays off Git repositories completely.
-//    4. Generous Free Tier: Cloudflare Workers gives you 100,000 free requests per day, which is more than enough for a personal site orcomment system.
-// **************************************************
-// export default {
-//    async fetch(request, env) {
-//       // Handle CORS Preflight request
-//       if (request.method === "OPTIONS") {
-//          return new Response(null, {
-//             headers: {
-//                "Access-Control-Allow-Origin": "*",
-//                "Access-Control-Allow-Methods": "POST, OPTIONS",
-//                "Access-Control-Allow-Headers": "Content-Type"
-//             }
-//          });
-//       }
-
-//       if (request.method !== "POST") {
-//          return new Response(JSON.stringify({ success: false, error: "Method not allowed" }), {
-//             status: 405,
-//             headers: { "Content-Type": "application/json" }
-//          });
-//       }
-
-//       try {
-//          const data = await request.json();
-//          const { name, text, timestamp } = data;
-
-//          if (!name || !text) {
-//             return new Response(JSON.stringify({ success: false, error: "Name and Comment are required." }), {
-//                status: 400,
-//                headers: { "Content-Type": "application/json" }
-//             });
-//          }
-
-//          // Format CSV line escaping quotes
-//          const csvEscape = (val) => String(val || "").replace(/"/g, '""');
-//          const newCsvLine = `"${csvEscape(name)}","${csvEscape(text)}","${csvEscape(timestamp)}"`;
-
-//          // GitHub API parameters from Environment Variables
-//          const repoOwner = env.GITHUB_OWNER;
-//          const repoName  = env.GITHUB_REPO;
-//          const filePath  = env.FILE_PATH || "Comments.csv";
-//          const branch    = env.GITHUB_BRANCH || "main";
-//          const token     = env.GITHUB_TOKEN;
-
-//          const githubApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}?ref=${branch}`;
-
-//          // 1. Fetch current file details from GitHub
-//          const getFileResponse = await fetch(githubApiUrl, {
-//             headers: {
-//                "Authorization": `Bearer ${token}`,
-//                "User-Agent": "Cloudflare-Worker-Comments",
-//                "Accept": "application/vnd.github.v3+json"
-//             }
-//          });
-
-//          let sha = "";
-//          let existingContent = "";
-
-//          if (getFileResponse.status === 200) {
-//             const fileData = await getFileResponse.json();
-//             sha = fileData.sha;
-//             // Decode base64 UTF-8 string
-//             const binaryStr = atob(fileData.content.replace(/\s/g, ''));
-//             const bytes = Uint8Array.from(binaryStr, char => char.charCodeAt(0));
-//             existingContent = new TextDecoder().decode(bytes);
-//          } 
-//          else if (getFileResponse.status !== 404) {
-//             const errText = await getFileResponse.text();
-//             return new Response(JSON.stringify({ success: false, error: `GitHub API error: ${errText}` }), {
-//                status: 500,
-//                headers: { "Content-Type": "application/json" }
-//             });
-//          }
-
-//          // Prepend new line to top of file
-//          if (existingContent && !existingContent.endsWith("\n")) {
-//             existingContent = "\n" + existingContent;
-//          }
-//          const updatedContent = newCsvLine + "\n" + existingContent;
-
-//          // Encode UTF-8 string to base64
-//          const utf8Bytes = new TextEncoder().encode(updatedContent);
-//          let binaryStr = "";
-//          utf8Bytes.forEach(b => binaryStr += String.fromCharCode(b));
-//          const base64Content = btoa(binaryStr);
-
-//          // 2. Commit updated file back to GitHub
-//          const putResponse = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
-//             method: "PUT",
-//             headers: {
-//                "Authorization": `Bearer ${token}`,
-//                "User-Agent": "Cloudflare-Worker-Comments",
-//                "Accept": "application/vnd.github.v3+json",
-//                "Content-Type": "application/json"
-//             },
-//             body: JSON.stringify({
-//                message: `Add comment from ${name}`,
-//                content: base64Content,
-//                sha: sha || undefined,
-//                branch: branch
-//             })
-//          });
-
-//          if (putResponse.ok) {
-//             return new Response(JSON.stringify({ success: true }), {
-//                headers: {
-//                   "Content-Type": "application/json",
-//                   "Access-Control-Allow-Origin": "*"
-//                }
-//             });
-//          } 
-//          else {
-//             const errData = await putResponse.json();
-//             return new Response(JSON.stringify({ success: false, error: errData.message || "Failed to commit comment." }), {
-//                status: 500,
-//                headers: {
-//                   "Content-Type": "application/json",
-//                   "Access-Control-Allow-Origin": "*"
-//                }
-//             });
-//          }
-//       } catch (err) {
-//          return new Response(JSON.stringify({ success: false, error: err.message }), {
-//             status: 500,
-//             headers: {
-//                "Content-Type": "application/json",
-//                "Access-Control-Allow-Origin": "*"
-//             }
-//          });
-//       }
-//    }
-// };
-// **************************************************
-
       // ****************************************************************************************************
       // ****************************************************************************************************
       // ****************************************************************************************************
