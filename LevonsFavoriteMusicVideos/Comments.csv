@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 "Levon","This new feature now works when the WebApp is hosted on GitHub host using Cloudflare Worker.","2026-10-26  22:08:13"
+=======
+"Levon","This new feature now works when the WebApp is hosted on GitHub host using Cloudflare Worker.","2026-10-26 22:08:13"
+"Levon","My comments","2026-10-26 22:06:29"
+>>>>>>> da17d8b3f3a6b40a1a479b7a9acbb70eb5807891
 "Levon","For now, enjoy the new feature as is until new change are made.","2026-07-29  21:31:35"
 "Levon","In the near future, this feature will also work when the WebApp is hosted on GitHub host using Cloudfare Worker.","2026-07-29  21:30:25"
 "Levon","This new feature currently works only when the WebApp is hosted on local IIS host using Classic ASP.","2026-07-29  21:29:25"
