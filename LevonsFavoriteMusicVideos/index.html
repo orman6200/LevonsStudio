@@ -3714,11 +3714,11 @@
          //    9. Under Environment Variables, click Add to add the following variables:
          //       a. GITHUB_TOKEN:       ???                                        My Personal Access Token (click "Encrypt" so it stays secret! and do not use quotes or double quotes)
          //       b. GITHUB_OWNER:       "orman6200"                                My GitHub username or organization name
-         //       c. GITHUB_REPO:        "LevonsFavoriteMusicVideos"                My repository name
+         //       c. GITHUB_REPO:        "LevonsStudio"                             My repository name
          //       e. GITHUB_FILE_PATH:   "LevonsFavoriteMusicVideos/Comments.csv"   My location of the Comments.csv file in my repository (or just "Comments.csv" if it's in the root of my repository)
          //       d. GITHUB_BRANCH:      "main"                                     (or gh-pages depending on my setup)
          //    10. Save and deploy again. 
-         //    11. Copy and paste your Worker's public URL to the "else if" section of your addEventListener script to point to your Cloudflare Worker URL ("https://github-comment-proxy.your-subdomain.workers.dev".
+         //    11. Copy and paste your Worker's public URL to the "else if" section of your addEventListener script to point to your Cloudflare Worker URL "https://github-comment-proxy.orman62.workers.dev".
          // B. Note on GitHub Pages latency: 
          //    1. When a user posts a comment, GitHub API commits directly to your Git repository. 
          //    2. It usually takes 1 to 5 seconds for GitHub Pages to rebuild and serve the newly updated Comments.csv file. 
@@ -3731,16 +3731,12 @@
          // **************************************************
          // The code in this "else if" block is run if "GitHub REST API with Cloudflare Worker" is detected.
          // **************************************************
-//       else if (window.location.hostname.includes("github.io") || window.location.hostname.includes("pages.dev")) {
          else if (window.location.hostname.includes("github.io") || window.location.hostname.includes("pages.dev") || 
                   window.location.hostname === "www.levon-studio.com") {
             const WORKER_URL = "https://github-comment-proxy.orman62.workers.dev";
             const Comments_CSV = "Comments.csv";
             const CommentSectionForm = document.getElementById('CommentSectionForm');
             
-//          if (CommentSectionForm) {
-//             CommentSectionForm.addEventListener('submit', saveComment);
-//          }
             if (CommentSectionForm) {
                CommentSectionForm.addEventListener('submit', (e) => {
                   e.preventDefault();
