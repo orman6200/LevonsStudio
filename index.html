@@ -61,12 +61,12 @@
          --Section-B1a-Width:                               1936px;   /*           6+2 + 1920 + 2+6           */
          --Section-Z1a-Width:                               1936px;   /*           6+2 + 1920 + 2+6           */
          /* ************************* */
-         /* A1a1+A1a2+A1a3+A1a4+A1a5 = 1920-(2+6+6+2 + 2+6+6+2 + 2+6+6+2 + 2+6+6+2) = 1856 = 504 + 24 + 800 + 264 + 264 */
+         /* A1a1+A1a2+A1a3+A1a4+A1a5 = 1920-(2+6+6+2 + 2+6+6+2 + 2+6+6+2 + 2+6+6+2) = 1856 = 504 + 24 + 800 + 208 + 320 */
          --Section-A1a1-Width:                               504px;   /*                  504                 */
          --Section-A1a2-Width:                                24px;   /*                   24                 */
          --Section-A1a3-Width:                               800px;   /*                  800                 */
-         --Section-A1a4-Width:                               264px;   /*                  264                 */
-         --Section-A1a5-Width:                               264px;   /*                  264                 */
+         --Section-A1a4-Width:                               208px;   /*                  208                 */
+         --Section-A1a5-Width:                               320px;   /*                  320                 */
          /* ********** */
          --Section-B1a1-Width:                              1920px;   /*                 1920                 */
          --Section-B1a2-Width:                              1920px;   /*                 1920                 */
@@ -150,7 +150,7 @@
       }
       /* **************************************************************************************************** */
       :root {
-         --FontSize:                                          24px;
+         --FontSize-Small:                                    24px;
          --FontSize-Medium:                                   30px;
          --FontSize-Large:                                    36px;
          --FontFamily:                                       Arial;
@@ -484,7 +484,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -537,7 +537,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -584,7 +584,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -618,7 +618,7 @@
          border-bottom-left-radius:  var(--Section-X0x0-Button-Border-BottomLeft-Radius);
          border-bottom-right-radius: var(--Section-X0x0-Button-Border-BottomRight-Radius);
          margin-bottom:              0px;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          font-weight:                normal;
          white-space:                pre-wrap;
          vertical-align:             top;
@@ -661,7 +661,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -711,7 +711,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -862,7 +862,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Medium);
          white-space:                pre-wrap;
          width:                      fit-content;
          cursor:                     pointer;
@@ -913,7 +913,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -998,7 +998,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -1044,21 +1044,24 @@
          vertical-align:             top;
       }
       #PageFooterButtonZ1a5b, #PageFooterButtonZ1a5c, #PageFooterButtonZ1a5d, #PageFooterButtonZ1a5e, #PageFooterButtonZ1a5f, 
-      #PageFooterButtonZ1a5g, #PageFooterButtonZ1a5h, #PageFooterButtonZ1a5i, #PageFooterButtonZ1a5j {
+      #PageFooterButtonZ1a5g, #PageFooterButtonZ1a5h, #PageFooterButtonZ1a5i, #PageFooterButtonZ1a5j, #PageFooterButtonZ1a5k, 
+      #PageFooterButtonZ1a5l, #PageFooterButtonZ1a5m, #PageFooterButtonZ1a5n, #PageFooterButtonZ1a5o  {
          margin-bottom:              0px;
       }
-      #PageFooterButtonZ1a5k {
+      #PageFooterButtonZ1a5p {
          margin-bottom:              6px;
+      }
+      #PageFooterButtonZ1a5o, #PageFooterButtonZ1a5p {
          background-color:           transparent;
       }
-      #PageFooterButtonZ1a5k a {
+      #PageFooterButtonZ1a5o a, #PageFooterButtonZ1a5p a {
          color:                      var(--TextColor);
          font-weight:                bold;
          text-decoration:            none;
          cursor:                     pointer;
          pointer-events:             auto;
       }
-      #PageFooterButtonZ1a5k a:hover {
+      #PageFooterButtonZ1a5o a:hover, #PageFooterButtonZ1a5p a:hover {
          background-color:           var(--ThemeColor-2);
          border-top-left-radius:     var(--Section-X0x0-Button-Border-TopLeft-Radius);
          border-top-right-radius:    var(--Section-X0x0-Button-Border-TopRight-Radius);
@@ -1099,7 +1102,7 @@
          margin-right:               6px;
          color:                      var(--TextColor);
          text-align:                 left;
-         font-size:                  var(--FontSize);
+         font-size:                  var(--FontSize-Small);
          white-space:                pre-wrap;
          width:                      auto;
          cursor:                     pointer;
@@ -1193,9 +1196,9 @@
                   </div>
 
                   <div class="Section-A1a5">
-                     <button id="ElementColorButton1" onclick="ClickedElementColorButton('ElementColorButton1')">Red  theme</button>
-                     <button id="ElementColorButton2" onclick="ClickedElementColorButton('ElementColorButton2')">Green  theme</button>
-                     <button id="ElementColorButton3" onclick="ClickedElementColorButton('ElementColorButton3')">Blue  theme</button>
+                     <button id="ElementColorButton1" onclick="ClickedElementColorButton('ElementColorButton1')">Red & Blue  theme</button>
+                     <button id="ElementColorButton2" onclick="ClickedElementColorButton('ElementColorButton2')">Green & Orange  theme</button>
+                     <button id="ElementColorButton3" onclick="ClickedElementColorButton('ElementColorButton3')">Blue & Pink  theme</button>
                   </div>
                </div>
             </div>
@@ -1206,7 +1209,7 @@
          <div class="Section-B1">
             <div class="Section-B1a">
                <div class="Section-B1a1">
-                  <button id="LinkButtonTitle"><span class="SpanFontWeight">My  Projects</span></button>
+                  <button id="LinkButtonTitle"><span class="SpanFontWeight">Projects</span></button>
                </div>
                <div class="Section-B1a2">
                   <button id="LinkButton01" onclick="window.open('https://www.Levon-Studio.com/LevonsFavoriteMusicVideos/index.html', '_blank')">Levon's Favorite Music Videos</button>
@@ -1242,12 +1245,12 @@
                   <div id="DeveloperNotesContent">
                      <button id="PageFooterButtonZ1a2b"><span class="SpanFontWeight">Hardware:   </span>Dell "XPS 8950" desktop (Intel Core i9-12900K, 64GB RAM, 2TB NVMe, NVIDIA GeForce RTX 3080 Ti), Dell "U4021QW" 40" 4K ultrawide monitor.</button>
                      <button id="PageFooterButtonZ1a2c"><span class="SpanFontWeight">Software:   </span>Microsoft "Visual Studio Code" and "Edge"; "4K Video Downloader+", "CyberLink PowerDirector", "HandBrake", "Snagit", "Paint.NET", Microsoft "Windows 11 Pro".</button>
-                     <button id="PageFooterButtonZ1a2d"><span class="SpanFontWeight">Languages:   </span>HTML (HyperText Markup Language), CSS (Cascading Style Sheets), JS (JavaScript). Contains 4,000+ lines of code.</button>
-                     <button id="PageFooterButtonZ1a2e"><span class="SpanFontWeight">??????:   </span>??????</button>
-                     <button id="PageFooterButtonZ1a2f"><span class="SpanFontWeight">Server:   </span>Microsoft Internet Information Services (IIS), Microsoft GitHub, final Host TBD.</button>
+                     <button id="PageFooterButtonZ1a2d"><span class="SpanFontWeight">Languages:   </span>HTML (HyperText Markup Language), CSS (Cascading Style Sheets), JS (JavaScript). Contains 6,000+ lines of code.</button>
+                     <button id="PageFooterButtonZ1a2e"><span class="SpanFontWeight">Video Player:   </span>Embeded Youtube iframe_api, with my custom video controls.</button>
+                     <button id="PageFooterButtonZ1a2f"><span class="SpanFontWeight">Web Server:   </span>Microsoft Internet Information Services (IIS), ClassicASP (Active Server Pages), Microsoft GitHub, GitHub REST API, Cloudflare Worker. Final Host TBD.</button>
                      <button id="PageFooterButtonZ1a2g"><span class="SpanFontWeight">AI:   </span>Microsoft Copilot (OpenAI ChatGPT), Google Gemini. Used for learning, reference, and debugging.</button>
-                     <button id="PageFooterButtonZ1a2h"><span class="SpanFontWeight">Design:   </span>I have strived to have an aesthetically unique and minimalist design, with emphasis on functionality and simplicity. Hence my unique/original web app user interface (UI) design language   © "FrameSoft UI".</button>
-                     <button id="PageFooterButtonZ1a2i"><span class="SpanFontWeight">Disclaimer:   </span>This Web App is built solely for coding technique learning and experimentation (hundreds of hours of coding effort).</button>
+                     <button id="PageFooterButtonZ1a2h"><span class="SpanFontWeight">Design:   </span>I have strived to have an aesthetically unique and minimalist design, with emphasis on functionality and simplicity. Hence my unique/original web app user interface (UI) design language  © "FrameSoft UI".</button>
+                     <button id="PageFooterButtonZ1a2i"><span class="SpanFontWeight">Disclaimer:   </span>This Web App is built solely for coding technique learning and experimentation, with hundreds of hours of analysis and coding effort.</button>
                   </div>
                </div>
 
@@ -1259,15 +1262,20 @@
 
                   <div id="OtherNotesContent">
                      <button id="PageFooterButtonZ1a5b"><span class="SpanFontWeight">Warning:   </span>This Web App is designed to run on Microsoft Edge and Google Chrome computer browsers (it will run mostly ok on Mozilla Firefox and Apple Safari browsers). However, it isn't designed for Mobile devices, while tablets with full Edge or Chrome browser seems to be fine.</button>
-                     <button id="PageFooterButtonZ1a5c"><span class="SpanFontWeight">News:   </span>Releasse Version v1.0A: Added a basic landing page that provides links to my various projects.</button>
-                     <button id="PageFooterButtonZ1a5d"><span class="SpanFontWeight">News:   </span>Releasse Version v2.0A: Added a set of "Zoom" level buttons in the top left corner, allowing resizing of my entire Web Application to fit various monitor sizes/resolutions. Also, added two "Text" color buttons in the top right corner, allowing customizing the text color of my entire Web Application. Moreover, added three "Theme" color buttons in the top right corner, allowing customizing the theme color of my entire Web Application.</button>
-                     <button id="PageFooterButtonZ1a5e"><span class="SpanFontWeight">News:   </span>??????</button>
+                     <button id="PageFooterButtonZ1a5c">==================================================</button>
+                     <button id="PageFooterButtonZ1a5d"><span class="SpanFontWeight">News:   </span>Releasse Version v1.0A: Added a basic landing page that provides links to my various projects.</button>
+                     <button id="PageFooterButtonZ1a5e"><span class="SpanFontWeight">News:   </span>Releasse Version v2.0A: Added a set of "Zoom" level buttons in the top left corner, allowing resizing of my entire Web Application to fit various monitor sizes/resolutions. Also, added two "Text" color buttons in the top right corner, allowing customizing the text color of my entire Web Application. Moreover, added three "Theme" color buttons in the top right corner, allowing customizing the theme color of my entire Web Application.</button>
                      <button id="PageFooterButtonZ1a5f"><span class="SpanFontWeight">News:   </span>??????</button>
                      <button id="PageFooterButtonZ1a5g"><span class="SpanFontWeight">News:   </span>??????</button>
                      <button id="PageFooterButtonZ1a5h"><span class="SpanFontWeight">News:   </span>??????</button>
                      <button id="PageFooterButtonZ1a5i"><span class="SpanFontWeight">News:   </span>??????</button>
                      <button id="PageFooterButtonZ1a5j"><span class="SpanFontWeight">News:   </span>??????</button>
-                     <button id="PageFooterButtonZ1a5k"><span class="SpanFontWeight">Contact:   </span>Feel free to shoot me an email if you like, for any reason:   <a href="mailto:janus0123@gmail.com"> janus0123@gmail.com </a></button>
+                     <button id="PageFooterButtonZ1a5k"><span class="SpanFontWeight">News:   </span>??????</button>
+                     <button id="PageFooterButtonZ1a5l"><span class="SpanFontWeight">News:   </span>??????</button>
+                     <button id="PageFooterButtonZ1a5m"><span class="SpanFontWeight">News:   </span>??????</button>
+                     <button id="PageFooterButtonZ1a5n">==================================================</button>
+                     <button id="PageFooterButtonZ1a5o"><span class="SpanFontWeight">Website:   </span>Feel free to visit my parent website landing page (having links to my various web applications, including this one):  <a href="https://www.levon-studio.com" target="_blank" rel="noopener noreferrer"> www.levon-studio.com </a></button>
+                     <button id="PageFooterButtonZ1a5p"><span class="SpanFontWeight">Contact:   </span>Feel free to shoot me an email (for any reason):  <a href="mailto:janus0123@gmail.com"> janus0123@gmail.com </a></button>
                   </div>
                </div>
 
@@ -1279,7 +1287,7 @@
 
                   <div id="ReleaseNotesContent">
                      <button id="PageFooterButtonZ1a6b">Web Application Release Version:  v2.0A</button>
-                     <button id="PageFooterButtonZ1a6c">© Copywrite  2026  Levon's Favorite Music Videos.</button>
+                     <button id="PageFooterButtonZ1a6c">© Copywrite  2026  Levon's Studio</button>
                      <button id="PageFooterButtonZ1a6d">All rights reserved.</button>
                   </div>
                </div>
